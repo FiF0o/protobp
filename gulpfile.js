@@ -1,18 +1,11 @@
 /**
- * Devtips Starter Kit Gulp configuration file
+ * Boilerplate Gulp configuration file
  * Feel free to modify this file as you need
  * if you find any bug or error, please submit an issue
  */
 
-/*****************************************
-   Browserify and Watchify are installed
-             in package.json
- build cmd: run 'npm run browserify:build'
- watch cmd: run 'npm run browserify:watch'
-*****************************************/
-
 //TODO Add ESlint for babel
-    //TODO Change source/js structure to have /js at the root and change import on function.js
+//TODO Change source/js structure to have /js at the root and change import on function.js
 //TODO !IMPORTANT! - Drop compass over Bourbon - !IMPORTANT!
 
 
