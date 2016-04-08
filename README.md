@@ -1,4 +1,4 @@
-# DevTips-Starter-Kit Gulp Version
+# Starter-Kit Gulp Version
 
 Use this as a simple structure for a simple start to a simple site.
 
