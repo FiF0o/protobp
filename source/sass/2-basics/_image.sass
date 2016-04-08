@@ -1,0 +1,20 @@
+.image-container
+  width: 100%
+  //padding: fluidize(20px, 960px)
+  //+clearfix
+
+  //fixes bug for invisible padding on .image-container
+  line-height: 1px
+
+  @media screen and (max-width: $s-screen)
+    width: 100%
+    height: auto
+  img
+    position: relative
+    top: 50%
+    left: 50%
+    transform: translate(-50%)
+
+    @media screen and (max-width: $s-screen)
+      width: 100%
+      height: auto

@@ -1,0 +1,68 @@
+@import "compass/utilities"
+@import 'vars'
+
+//*
+// use placeholders selectors when extends mixins
+// and create a css class for the placeholder
+
+
+// +background(linear-gradient(top, #9b9592, #3c3733))
+// +background(linear-gradient(top, #9b9592, #e79e23 75%, #3c3733))
+
+
+//  background: image-url('s.png') repeat
+
+//  background: image-url('s.png')
+//  background: inline-image('s.png')
+//  height: image-height('s.png')
+//  width: image-width('s.png')
+
+
+
+// color: scale_color(#eee, $lightness: 7%)
+// color: lighten(#eee, 7%)
+
+// darken with negative value
+//color: scale-lightness(#eee, 7%)
+
+
+//opposite-position(top) // bottom
+//opposite-position(left) // right
+//opposite-position(right bottom) // left top
+
+
+// +stretch(5px, 5px, 5px, 5px)
+
+// pure CSS caret
+=caret($point)
+  $opposite: opposite-position($point)
+  border: 100px solid transparent
+  border-#{$opposite}: 100px solid #000
+  border-#{$point}: 0
+  height: 0
+  width: 0
+
+
+// *** Rhythm ***
+//  +adjust-font-size-to(50px)
+//  +adjust-leading-to(2, 50px)
+
+//  +leader(1, 50px) -> top margin
+//  +trailer(, 50px1) -> bottom margin
+//  +trailing-border(10px, 1, 50px) -> adds bottom border
+//  +rhythm-borders(2px, 1, 20px)
+
+
+// ****** TO DO ****** //
+// Mixin for buttons
+=button($arg1, $arg2, $base-font-size, $color: #fff)
+  border: $arg1 $arg2 $color
+  font-size: $base-font-size
+  text-transform: uppercase
+
+// Mixin to override borderbox
+// could pass content-box
+=box-sizing($x: border-box)
+  -webkit-box-sizing: $x
+  -moz-box-sizing: $x
+  box-sizing: $x

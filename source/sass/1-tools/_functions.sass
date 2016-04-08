@@ -1,0 +1,41 @@
+@import 'vars'
+// function returning the good contrast for the text
+@function button-text($bg)
+  @return contrast-color($bg, #333, #eee, 50%)
+
+// is called
+// .btn-a
+//    background: #222
+//     color: button-text(#222)  -> #eee
+
+
+//
+@function calc-em($target-px, $context)
+  @return ($target-px / $context) * 1em
+
+@function fluidize($target, $context)
+  @return ($target / $context) * 100%
+
+
+//@function create-sections($item, )
+//  @each 
+
+$primary-mono1: #7D7827
+$primary-mono2: #FDF79B
+$primary-mono3: #FDF14F
+$primary-mono4: #FDF14F
+$primary-mono5: #CAC03F
+
+$color-mono-list: 'primary-mono1' 'primary-mono2' 'primary-mono3' 'primary-mono4'
+$color-mono-name: '#7D7827' '#FDF79B' '#FDF14F' '#FDF14F'
+$color-listing: zip($color-mono-list, $color-mono-name )
+
+
+//.section
+//@each $i in $color-mono-name
+//  .section-#{$i}
+//    background: $color-mono-list#{$i}
+
+@each $a in $color-listing
+  .section-#{nth(a,1)}
+    background-color: nth($a, 2)

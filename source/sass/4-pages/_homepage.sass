@@ -1,0 +1,35 @@
+//main
+//  background-color: red
+//  background-image: url("http://placehold.it/350x150")
+//  height: auto
+//
+//html
+//  height: 100%
+//
+//body
+//  height: 100%
+
+div.hero-image
+  //background-image: url(https://unsplash.imgix.net/photo-1414490929659-9a12b7e31907)
+  //background-image: url("../img/uxbackground-original.jpg")
+  background-image: url("../img/uxbackground-960px.jpg")
+  // gives 100% height to the background image
+  height: 100vh
+  background-size: cover
+  //margin-bottom: 20px
+  //TODO Add negative margin bottom to cover page
+  //margin-top: fluidize(-120px, 768px)
+  // centers text inside image
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  @media screen and (max-width: $l-screen)
+    background-image: url("../img/uxbackground-960px.jpg")
+  @media screen and (max-width: $m-screen)
+    background-image: url("../img/uxbackground-768px.jpg")
+  @media screen and (max-width: $s-screen)
+    background-image: url("../img/uxbackground-480px.jpg")
+  @media screen and (max-width: $xs-screen)
+    background-image: url("../img/uxbackground-320px.jpg")
+  //@media screen and (max-width: $xxs-screen)

@@ -1,0 +1,57 @@
+//$icons: sprite-map("../../assets/img/icons/*.png")
+$icon-color: black !default
+
+i
+  //background: $icons
+  display: inline-block
+  color: red
+
+// ******** Function to create and import sprites ******* //
+//@each $i in sprite_names($icons)
+//  .icn-#{$i}
+//    background-position: sprite-position($icons, $i)
+//    +sprite-dimensions($icons, $i)
+
+//TODO Update animations
+.font-icon-default
+  background-color: white
+  color: red
+  font-size: 36px
+  transition: all 0.3s ease-in-out
+
+  &:hover
+    background-color: red
+    color: white
+    font-size: 44px
+
+
+
+
+// ******** Font Icons ******* //
+
+// Default css styling for .i font-icons here
+// use .i class to import/add font-icons in your file
+.i
+  color: red
+  display: inline-block
+
+
+
+.font-icon-links
+  // Some overrides (properties) to be placed here
+  &:hover
+    animation: wiggle 0.5s ease 1
+
+
+
+@keyframes wiggle
+  0%
+    transform: rotate(0deg)
+  20%
+    transform: rotate(8deg)
+  50%
+    transform: rotate(-8deg)
+  80%
+    transform: rotate(8deg)
+  100%
+    transform: rotate(0deg)

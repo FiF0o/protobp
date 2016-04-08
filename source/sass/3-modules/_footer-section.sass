@@ -1,0 +1,43 @@
+footer
+  margin: 0 auto
+  padding: calc-em(20px, 1024px) calc-em(10px, 1024px)
+  //width: 100%
+  text-align: center
+  background-color: tint($complimentary2, 95%)
+  p
+    margin-top: calc-em(40px, 1024px)
+
+
+.footer-link
+  display: inline-block
+  //TODO Change color to be the same as text
+  .i
+    color: red
+
+  @media screen and (max-width: $s-screen)
+    display: block
+
+.secondary-list
+  .secondary-items
+    list-style: none
+
+  @media screen and (max-width: $s-screen)
+    padding: 0px
+
+
+
+  //TODO Move this class into its own component 2-basics?
+li.secondary-items
+  a
+    margin: 0px 1em 0px .2em
+    padding: 0px 1em 0px .2em
+    text-transform: lowercase
+    font-weight: 200
+    font-size: 1.2em
+    border-bottom: none
+    @media screen and (max-width: $s-screen)
+      padding-bottom: 20px
+
+
+    &:hover, &:focus
+      background-color: transparent

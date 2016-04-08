@@ -1,0 +1,185 @@
+@import "compass/utilities/general/clearfix"
+
+//.clearfix
+//  &:after
+//    content: ""
+//    display: table
+//    clear: both
+
+//div.header
+//  background-color: white
+//  width: 100%
+//  height: 88px
+  //box-shadow: 0px 1px 2px rgba(0,0,0,0.1)
+  //@extend .clearfix
+
+//a.logo
+//  background: url('')
+//  background: inline-image('')
+//  display: block
+//  height: image-height('.png')
+//  width: image-width('.png')
+//  text-indent: -9999px
+
+div.logo
+  //height: auto
+  //width: 88px
+  //width: calc-em(44px, 44px)
+  //height: calc-em(44px, 44px)
+  width: fluidize(88px, 1024px)
+  height: fluidize(88px, 1024px)
+  //width: image-width('../../assets/img/icons/RBS6Nations.jpg')
+  display: block
+  background-image: url(http://placehold.it/88x88)
+  float: left
+  text-indent: -9999px
+  //+hide-text(right)
+  //margin: auto 0px auto 10px
+  margin-left: calc-em(88px, 88px)
+  margin-top: calc-em(88px, 88px)
+  transition: all 0.2s ease-in-out
+
+  +clearfix
+  //transform: rotate(10deg)
+
+
+.nav
+  float: right
+  @media screen and (max-width: $s-screen)
+    width: 100%
+    border-top: 1px solid
+    border-color: lighten($border1, 20%)
+    margin: 0 auto
+    padding: 0
+
+
+  ul.nav-list
+    //margin-right: calc-em(20px, 400px)
+    // appends nav-open class to the nav list to make it visible when clicked
+
+    @media screen and (max-width: $s-screen)
+      width: 100%
+      text-align: center
+      //margin: 0px
+      //padding: 0
+      display: none
+    //@media screen and (min-width: 769px)
+    //  display: inline-block
+
+    .nav-open &
+      display: block
+
+      @media screen and (max-width: $s-screen)
+        list-style: none
+        padding: 0
+        margin: 0 auto
+    li
+      display: inline-block
+
+      @media screen and (max-width: $s-screen)
+        display: block
+        margin: 0 auto
+        padding: 0
+
+
+li.nav-elements
+  a
+    text-transform: capitalize
+    margin: 0 10px 0 10px
+    font-weight: 400
+    border-bottom: none
+    background-color: transparent
+    @media screen and (max-width: $s-screen)
+      width: 100%
+      display: block
+      text-align: center
+      margin: 0 auto
+      padding: 20px 0 20px 0
+      border-bottom: 1px solid
+      border-color: lighten($border1, 30%)
+    &:last-child
+      border-bottom: none
+
+.icon-menu
+  font-size: 36px
+  margin: 0 auto
+  text-align: center
+  vertical-align: middle
+  display: table-cell
+
+//button for RWD view
+.nav-mobile
+  float: right
+  width: 62px
+  height: 62px
+  display: none
+  transition: all 0.4s ease
+
+
+  @media screen and (max-width: $s-screen)
+    //display: block
+    display: table
+  //+clearfix
+
+// ******* Code for sticky nav ******* //
+header
+  height: calc-em(200px, 1024px)
+  transition: all 0.4s ease
+
+body
+  //add top padding to add smooth effect when scrolled
+  padding-top: fluidize(120px, 768px)
+  @media screen and (max-width: 480px)
+    padding-top: 0
+
+.header
+  width: 100%
+  //height: 88px
+  background-color: $white
+  opacity: 1
+  //add bottom margin to pull when scrolled
+  margin-bottom: calc-em(-60px, 200px)
+  padding-bottom: calc-em(50px, 200px)
+  position: relative
+  z-index: 150
+  transition: all 0.4s ease
+  +clearfix
+  @media screen and (max-width: $s-screen)
+    padding-bottom: 0px
+
+
+.main-nav-scrolled
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.1)
+  position: fixed
+  top: 0
+  opacity: .8
+  // properties animated by transition
+  font-size: 14px
+  height: inherit
+  // put a darker color
+
+  // color: scale_color(#eee, $lightness: 7%)
+  // color: lighten(#eee, 7%)
+
+  // darken with negative value
+  //color: scale-lightness(#eee, 7%)
+  background: $white
+  text-align: left
+  padding-bottom: 0
+  //padding-left: 20px
+  //padding-right: 20px
+
+.main-nav-logo-scrolled
+  div.logo &
+    height: 62px
+    width: 62px
+    +opacity(0.1)
+
+
+
+
+//.nav-up
+//  top: -50px
+//
+//.nav-down
+//  top: 0px

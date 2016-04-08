@@ -1,0 +1,34 @@
+{
+  "name": "BoilerPlate",
+  "version": "1.0.0",
+  "authors": [
+    "Jon Laz"
+  ],
+  "description": "Simple structure for a simple start to a simple site.",
+  "main": "build/index.html",
+  "keywords": [
+    "boilerplate",
+    "gulp",
+    "sass",
+    "compass",
+    "babel",
+    "browserify",
+    "jade"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "scrollmagic": "^2.0.5",
+    "gsap": "^1.18.2"
+  },
+  "homepage": "https://github.com/FiF0o/fif0o.github.io",
+  "moduleType": []
+}

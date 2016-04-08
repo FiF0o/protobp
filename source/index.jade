@@ -1,0 +1,86 @@
+doctype html
+html(lang="en")
+head
+  title Title
+  meta(charset="UTF-8")
+  //- IE compatibality mode
+  meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+  meta()
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+  //link(rel="shortcut icon", href="./assets/img/favicons/favicon.ico")
+  link(rel="stylesheet", href="assets/css/main.css")
+  //// production version
+  //link(rel="stylesheet", href="assets/css/main.min.css")
+
+body
+  header
+  div.header
+      nav
+        div.logo
+        .nav-mobile
+          .icon-menu.font-icon-default
+        .nav
+          ul.nav-list
+            li.nav-elements
+              a(rel="something", href="page2.html").link-nav text here
+              a(rel="page2.html", href="#").link-nav text here
+              a(rel="something", href="#").link-nav text here
+
+  // image credit: Nearsoft Inc @flickr - UX Clinic - Affinity Diagram Session
+  div.hero-image
+    h1 i am the h1 for the homepage
+    h2 i am a h2 title
+    p.leading-section
+      | lorem ipsum
+
+  section
+    h2 i am a h2 title
+    h3 I am a h3 title
+    p.leading-section Leading section is here lorem dfsdfsdfdsfsdfsdfsdfsd
+      span  span tag is here and inline
+
+      a(href='#') my tag is here
+      span  dsfsfdsfdsfdsfdsfdsfds
+      br
+      button.button My button is here
+
+    //article an article as a div
+  section
+    a(href="", class="button-primary") button name
+    h1 h1 title here
+    h2 a h2 here
+    p lorem
+    article an article as a div
+
+  .vertical-grid
+    // *** RSA *** //
+    .vertical-grid-item-2
+      .image-container
+        img(src="assets/img/RLink2-original.jpg"
+        srcset="assets/img/RLink2-320px.jpg 320w, assets/img/RLink2-480px.jpg 480w, assets/img/RLink2-768px.jpg 768w, assets/img/RLink2-960px.jpg 960w, assets/img/RLink2-original.jpg 1280w",
+        sizes="(max-width: 20em) 30vw, (max-width: 30em) 60vw, (max-width: 40em) 90vw", alt="RLink 2.")
+    .vertical-grid-item-2
+      h3 RSA I am h3 title here
+      p.leading-section.
+        Lorem sdjfjsdiojflsdjflksdfjklsdfjlksdfjlksdflsdflsdjfsdjf;dsjfk;dsjfk;sjfk;dsfk;sdfjk;sdjfksdjkfdsjkfjsdfksdkf;sdfdsfsdfsdfsdfsdfdsfjkdsnfjksdfjdsjfdsjfds
+      a(href='#') Link to the vendor
+
+  footer
+    ul.secondary-list
+      li.secondary-items
+        .footer-link
+          span.i.icon-ic_3d_rotation_black_24px
+            a(rel="something", href="#").link-nav text here
+          .footer-link
+            span.i.icon-ic_3d_rotation_black_24px
+              a(rel="something", href="#").link-nav text here
+          .footer-link
+            span.i.icon-ic_3d_rotation_black_24px
+              a(rel="something", href="#").link-nav text here
+
+  .horizontal-grid
+    .horizontal-grid-item 1 item horizontal
+    .horizontal-grid-item 2 item horizontal
+
+  script(src="./assets/js/app.js")
+
