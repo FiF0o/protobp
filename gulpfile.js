@@ -11,7 +11,8 @@
  watch cmd: run 'npm run browserify:watch'
 *****************************************/
 
-
+//TODO Add ESlint for babel
+    //TODO Change source/js structure to have /js at the root and change import on function.js
 //TODO !IMPORTANT! - Drop compass over Bourbon - !IMPORTANT!
 
 
@@ -239,7 +240,7 @@
 
 // *****************
 
-gulp.task('imageresponsive', function () {
+gulp.task('image', function () {
   return gulp.src(images.in + '/*.{jpg,jpeg,png}')
       .pipe(responsive({
         // Resize all JPG images to three different sizes: 200, 500, and 630 pixels
@@ -389,7 +390,7 @@ gulp.task('imageresponsive', function () {
   //})
 
   // Creates RWD images and gets icons from source directory
-  gulp.task('build:images',['imageresponsive','icons']);
+  gulp.task('build:images',['image','icons']);
 
  //Update images on build folder
   gulp.task('icons', function () {

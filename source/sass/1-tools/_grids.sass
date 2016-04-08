@@ -1,8 +1,16 @@
 // ********** VERTICAL GRID ********** //
+// Import global vars for grids
 @import '_vars'
 @import '_functions'
-// Import global vars for grids
 
+
+//* ************ G R I D ************
+//
+//@lost gutter 60px;
+//Default grid gutter is 30px
+//
+//@lost flexbox flex;
+//@lost cycle none;
 
 // **** Horizontal grid layout **** //
 .horizontal-grid
@@ -37,30 +45,21 @@
 
 // **** Vertical grid layout **** //
 .vertical-grid
-  //lost-utility: clearfix
-
   //TODO Remove lost-utility: edit
   //debug
   lost-utility: edit
   box-sizing: border-box
-  //height: 800px
 
-  // horizontal align items in the grid
+  //horizontal align items in the grid
   lost-center: $l-screen 0px flex
 
-  ////centers elements - similar to container
+  //centers elements - similar to container
   //lost-center: 980px
   color: white
   text-align: center
   vertical-align: center
   //lost-align: center
   //padding: fluidize(20px, 960px)
-  //margin: 0 auto
-
-  //transform: rotate(10deg)
-  //+transform(rotate(20deg))
-
-  //margin-bottom: 20px
   @media screen and (max-width: $m-screen)
     lost-center: $m-screen
 
@@ -80,13 +79,8 @@
 
   .vertical-grid-item-2
     padding: fluidize(20px, 960px) 10px
-    //padding-bottom: 10px
     lost-column: 1/2
     lost-utility: clearfix
-    //line-height: 500px
-
-    //debug
-    //lost-utility: edit
 
     //**** test **** //
     //lost-align: center
@@ -125,3 +119,13 @@ h6
 
 p
   +rhythm(1, 1, 1, 1, 18px)
+
+
+// *** Rhythm ***
+//  +adjust-font-size-to(50px)
+//  +adjust-leading-to(2, 50px)
+
+//  +leader(1, 50px) -> top margin
+//  +trailer(, 50px1) -> bottom margin
+//  +trailing-border(10px, 1, 50px) -> adds bottom border
+//  +rhythm-borders(2px, 1, 20px)

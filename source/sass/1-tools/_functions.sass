@@ -9,16 +9,24 @@
 //     color: button-text(#222)  -> #eee
 
 
-//
+//* Fluid layouts
+
+ FORMULA
+ - target / context = result (em)
+ 30px (expected) / 10px (default context, e.g. body fitn size) -> 3em
+
+ - Font, define baseline body then %
+ - Grid, define container in % then work the sizes out
+
+
+// Returns em units based on context
 @function calc-em($target-px, $context)
   @return ($target-px / $context) * 1em
 
+
+// Returns % units based on context
 @function fluidize($target, $context)
   @return ($target / $context) * 100%
-
-
-//@function create-sections($item, )
-//  @each 
 
 $primary-mono1: #7D7827
 $primary-mono2: #FDF79B
@@ -29,13 +37,3 @@ $primary-mono5: #CAC03F
 $color-mono-list: 'primary-mono1' 'primary-mono2' 'primary-mono3' 'primary-mono4'
 $color-mono-name: '#7D7827' '#FDF79B' '#FDF14F' '#FDF14F'
 $color-listing: zip($color-mono-list, $color-mono-name )
-
-
-//.section
-//@each $i in $color-mono-name
-//  .section-#{$i}
-//    background: $color-mono-list#{$i}
-
-@each $a in $color-listing
-  .section-#{nth(a,1)}
-    background-color: nth($a, 2)

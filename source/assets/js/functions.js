@@ -1,57 +1,44 @@
-
-
-
-//$( document ).ready(function() {
-//
-//  // Get started!
-//
-//});
-//import jQuery from "../../vendors/jquery/dist/jquery";
-//console.log(jQuery);
-
 import $ from '../../vendors/jquery/dist/jquery.js';
+// -- second syntax -- //
 //var $ = require('../../vendors/jquery/dist/jquery');
-console.log($);
+
+// * Debug * //
+//console.log($);
 
 import kikou from './test';
-//var kikou = require('./test');
-console.log(kikou);
-
 kikou();
+// -- second syntax -- //
+//var kikou = require('./test');
+
+// * Debug * //
+//console.log(kikou);
 
 import TaMere from './scrollSpy';
-console.log('log TaMere import: \n\n' + TaMere + '\n\n');
+//console.log('log TaMere import: \n\n' + TaMere + '\n\n');
 //
 var taMere2 = new TaMere('yo','yo');
-console.log(taMere2);
-console.log('log TaMere.taMere \n\n' + TaMere.taMere);
+// * Debug * //
+//console.log(taMere2);
+//console.log('log TaMere.taMere \n\n' + TaMere.taMere);
 
 
 import scrollSpy from './scrollSpy';
-
-console.log(scrollSpy);
-
-console.log(scrollSpy.taMere);
-
+// * Debug * //
+//console.log(scrollSpy);
+//console.log(scrollSpy.taMere);
 
 
 
+// * Debug * //
 $(function(){
     console.log('tams jquery');
 }());
 
-
-
-
-
-// comments
-
-
-
+// * Debug * //
 const test = 5;
 console.log(test);
 
-
+// * Debug * //
 class Abecdewee {
     constructor(height, width) {
         this.width = width;
@@ -59,58 +46,12 @@ class Abecdewee {
     }
 
 }
-
-var aaecdewee = new Abecdewee;
-console.log(aaecdewee);
-
-
-// Comments
-
-////import getUsefulContents as Toto from "test.js";
-////getUsefulContents("https://api.github.com/repos/ansible/ansible/stats/participation", data => {
-////    console.log(data);
-////});
-//
-//
-////import something as myExport from 'test';
-////import hello as myExport2 from 'test';
-////
-////console.log(something);
-////console.log(hello);
-//
-//const kikou = 5;
-//console.log(kikou);
-//
-//class Object {
-//    constructor(height, width) {
-//        this.width = width;
-//        this.height = height
-//    }
-//
-//}
-//
-//
-
-
-////IIFE Debug
-
-//(function() {
-//
-//
-//
-//})();
-//
-//
-//$(document).ready(function(){
-//    console.log('jquery you win')
-//})
-
-
+// * Debug * //
+//var aaecdewee = new Abecdewee;
+//console.log(aaecdewee);
 
 
 //TODO Modularise code snippets for nav
-
-
 // ****** RWD MOBILE NAV  ****** //
 
 //var mobileNav =
@@ -154,9 +95,6 @@ $(window).scroll(function(event){
 });
 
 // ****** HIDES MOBILE NAV WHEN SCROLLING ****** //
-
-
-
 
 //$(window).resize(function() {
 //    var win = $(this);
@@ -218,7 +156,6 @@ $(window).scroll(function() {
 });
 
 //TODO Add script that hides nav when scrolled down and shows it back when scrolled up
-
 
 //var div = $( "<div>" );
 //

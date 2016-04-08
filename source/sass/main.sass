@@ -28,12 +28,10 @@
 // *********************************************
 
 
-
 // Don't change the order of imports
 //TODO Refactor SASS following BEM - http://markdotto.com/2015/07/20/css-nesting/
 
 //TODO sass imports, use sass globbing for importing files instead of all directories 1 by 1: https://github.com/chriseppstein/sass-globbing
-
 // -1- ****** Config & Default toolings ****** //
 @import '1-tools/normalize'
 //_global will import 'compass'
@@ -69,24 +67,12 @@
 @import '5-custom/fonticon'
 
 //@import '1-tools/print'
-
-
-// -5- ****** Global overrides - should be placed below ****** //
-// test debug compass, lost, autoprefixer
-// h1
-//  color: blue
-//  +border-radius(1px 3px 5px 7px, 2px 4px 6px 8px)
-//  +box-shadow(rgba(blue, 0.4) 0 0 25px, rgba(green, 0.2) 0 0 3px 1px inset)
-//  box-sizing: border-box
-//  +transform-origin( 2deg, 2deg, 2deg, 3D-only )
-//  +perspective( 5000 )
-
+//
 
 
 // Calls fontIcons icons (5-custom/_font.scss)
 //body
 //  font-family: icons
-
 // overrides icons default font-size of '24px'
 i
   font-size: 52px
@@ -96,39 +82,7 @@ i
 .caret
   +caret(left)
 
-//a
-//  margin: calc-em(1244px, 24px)
-
-//h1
-//  color: lighten($font1 , 50%)
-
-
-//.fork-tag
-//  position: absolute
-//  top: 10px
-//  right: -10px
-//  background: $blue
-//  color: white
-//  padding: 2px 6px
-//  transition: all 0.3s ease-in-out
-//  transform-origin: top right
-//
-//  &:hover
-//    color: white
-//    animation: wiggle 0.4s linear 1
-//
-//@keyframes wiggle
-//  0%
-//    transform: rotate(0deg)
-//  20%
-//    transform: rotate(8deg)
-//  50%
-//    transform: rotate(-8deg)
-//  80%
-//    transform: rotate(8deg)
-//  100%
-//    transform: rotate(0deg)
-
+// Settings for generating colors for sections
 $color-mono-list: 'section-1' 'section-2' 'section-3' 'section-4' 'section-5'
 $color-mono-name: #7D7827, #FDF79B, #FDF14F, #7D7A4D, #CAC03F
 $color-listing: zip($color-mono-list, $color-mono-name )
@@ -145,32 +99,7 @@ $color-listing: zip($color-mono-list, $color-mono-name )
     content: nth($a, 1)
     height: 500px
 
-//.test-flex
-//  // container needed for flexbox on safari
-//  display: flex
-//  align-items: flex-end
-//  flex-wrap: wrap
-//  align-content: flex-end
-//  background-color: #0000AA
-//  padding: 20px
-//  margin: 20px
-//  color: white
-
-
-//  .flex-item-test
-//    // items to be wrapped in a the flexbox
-//    width: 25%
-//    color: green
-//    margin: 20px
-//    background-color: red
-//    padding: 20px
-//    @media screen and (max-width: $m-screen)
-//      width: 100%
-//      background-color: yellow
-
-.leading-section
-  display: block
-
+// * Debug postcss * //
 //h1
 //  color: red
 //  font-size: 60px
