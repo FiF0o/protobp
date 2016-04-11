@@ -18,12 +18,12 @@ gem install autoprefixer-rails
 ```
 
 - for the images tasks
-If you don'have brew [http://brew.sh/] you can install it with the following command
+If you don'have [brew] (http://brew.sh/) you can install it with the following command
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-You then need to install Graphicsmagics which runs via Sharp[http://sharp.dimens.io/en/stable/install/]
+You then need to install Graphicsmagics which runs via [Sharp] (http://sharp.dimens.io/en/stable/install/)
 ```
  brew install homebrew/science/vips --with-webp --with-graphicsmagick
 ```
