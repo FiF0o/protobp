@@ -3,12 +3,12 @@
  */
 //TODO Load plugins from bower - https://github.com/janpaepke/ScrollMagic/wiki/Getting-Started-:-First-Steps
 
-import tweenMax from '../../vendors/gsap/src/uncompressed/TweenMax.js';
-import $ from '../../vendors/jquery/dist/jquery.js';
+import tweenMax from '../vendors/gsap/src/uncompressed/TweenMax.js';
+import $ from '../vendors/jquery/dist/jquery.js';
 //TODO fix what to import for scrollspy
-import tweenLite from '../../vendors/gsap/src/uncompressed/TweenLite.js';
+import tweenLite from '../vendors/gsap/src/uncompressed/TweenLite.js';
 
-import scrollMagic from '../../vendors/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js';
+import scrollMagic from '../vendors/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js';
 
 // Can't pass debugger...
 //import debugScroll from '../../vendors/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js';

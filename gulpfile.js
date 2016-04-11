@@ -50,7 +50,8 @@
       gulpif = require('gulp-if'),
       path = require('path'),
       responsive = require('gulp-responsive'),
-      sassLint = require('gulp-sass-lint');
+      sassLint = require('gulp-sass-lint'),
+      eslint = require('gulp-eslint');
   //TODO Check config.js and var in gulpfile.js to refactor. Is the structure needed for the config vars in gulpfile.js?
 
   // Configs
@@ -120,12 +121,9 @@
     watch: [source + (config.fonts[--config.fonts.length] == '/' ? config.fonts + '**/*' : config.fonts + '/**/*')]
   };
 
+log(pkg.name + ' ' + pkg.version + ' ' + config.environment + ' build');
 
-
-  console.log(pkg.name + ' ' + pkg.version + ' ' + config.environment + ' build');
-
-
-//TODO Install ESlint
+// *****************
 
 //gulp.task('testbro', function(){
 //  browserify('source/assets/js/functions.js')
@@ -185,12 +183,15 @@
           gutil.log(e)
         })
         //creating a stream of a new file where the source js files will be created (into app.js)
-        .pipe(vinylSource('app.js'))
+        .pipe(vinylSource(js.filename))
         //creating buffer for creating sourcemaps from browserify
         .pipe(buffer())
-        .pipe($.plumber())
-        .pipe($.jshint())
-        .pipe($.jshint.reporter('jshint-stylish', {verbose: true}))
+        //.pipe($.plumber())
+
+        .pipe($.eslint())
+        .pipe($.eslint.format())
+        .pipe(eslint.failAfterError())
+
         .pipe(sourcemaps.init({loadMaps: true}))
 
         //creates a condition for production mode
@@ -203,7 +204,7 @@
         //.pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
 
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./build/assets/js'))
+        .pipe(gulp.dest(js.out))
 
         //TODO use gulpif else to refactor pipe
        // .pipe(gutil.env.type === 'production' ? exit() : gutil.noop())
@@ -217,7 +218,7 @@
   //TODO Refactor task with config variable for src and dest
   // Regenerate the bundle
   gulp.task('babel:watch', function() {
-    var watcher = watchify(browserify('./source/assets/js/functions.js', watchify.args))
+    var watcher = watchify(browserify('./source/js/main.js', '!node_modules/**',watchify.args))
     bundle(watcher);
     watcher.on('update', function() {
       bundle(watcher)
@@ -228,7 +229,7 @@
 
   // Create bundle once
   gulp.task('babel', function() {
-      return bundle(browserify('./source/assets/js/functions.js'))
+      return bundle(browserify('./source/js/main.js', '!node_modules/**'))
   });
 
 // *****************
@@ -417,7 +418,7 @@ gulp.task('image', function () {
   gulp.task('iconfont', function(){
     var fontName = 'icons';
     var runTimestamp = Math.round(Date.now()/1000);
-
+    //TODO change base: to global var
     gulp.src([fonts.in], {base: 'source/assets'})
         .pipe(iconfontCss({
           fontName: fontName,
@@ -492,7 +493,7 @@ gulp.task('image', function () {
   // Build Task
 // TODO include sassLint task
 // TODO Once Browserify is hooked up remove vendors tasks which will be obsolete
-  gulp.task('build', ['clean', 'jade', 'favicon', 'compass', 'iconfont', 'babel','build:images', 'watch']);
+  gulp.task('build', ['clean', 'jade', 'compass', 'babel', 'iconfont', 'favicon', 'build:images', 'watch']);
 
   // Watch Task
   // Task dependancy, watch is run when browsersync is finished ['browsersync']
@@ -504,7 +505,7 @@ gulp.task('image', function () {
     // Watch for javascript changes and compile
     //gulp.watch(js.in, ['babel']);
     //TODO Remove watch task for js files as we are using browserify
-    gulp.watch(['source/assets/js/functions.js','source/assets/js/**/*.js'], ['babel', browserSync.reload]);
+    gulp.watch(['source/js/main.js',js.in], ['babel', browserSync.reload]);
     // Watch for new images and copy
     gulp.watch(images.in, ['images']);
     // Watch for new vendors and copy

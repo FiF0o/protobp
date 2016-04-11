@@ -56,7 +56,7 @@ module.exports = function() {
       precision: 3
     },
     // Javascript directory
-    jsDir: 'assets/js',
+    jsDir: 'js',
     // Javascript file name
     jsName: 'app.js',
     // This is the browser sync options

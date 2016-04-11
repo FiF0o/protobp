@@ -1,4 +1,4 @@
-import $ from '../../vendors/jquery/dist/jquery.js';
+import $ from '../vendors/jquery/dist/jquery.js';
 // -- second syntax -- //
 //var $ = require('../../vendors/jquery/dist/jquery');
 
@@ -30,7 +30,7 @@ import scrollSpy from './scrollSpy';
 
 
 // * Debug * //
-$(function(){
+$(function() {
     console.log('tams jquery');
 }());
 
@@ -42,12 +42,12 @@ console.log(test);
 class Abecdewee {
     constructor(height, width) {
         this.width = width;
-        this.height = height
+        this.height = height;
     }
 
 }
 // * Debug * //
-//var aaecdewee = new Abecdewee;
+//var aaecdewee = new Abecdewee();
 //console.log(aaecdewee);
 
 
