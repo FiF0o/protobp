@@ -1,54 +1,10 @@
 import $ from '../vendors/jquery/dist/jquery.js';
-// -- second syntax -- //
-//var $ = require('../../vendors/jquery/dist/jquery');
 
 // * Debug * //
-//console.log($);
+console.log($);
 
 import kikou from './test';
-kikou();
-// -- second syntax -- //
-//var kikou = require('./test');
-
-// * Debug * //
-//console.log(kikou);
-
-import TaMere from './scrollSpy';
-//console.log('log TaMere import: \n\n' + TaMere + '\n\n');
-//
-var taMere2 = new TaMere('yo','yo');
-// * Debug * //
-//console.log(taMere2);
-//console.log('log TaMere.taMere \n\n' + TaMere.taMere);
-
-
-import scrollSpy from './scrollSpy';
-// * Debug * //
-//console.log(scrollSpy);
-//console.log(scrollSpy.taMere);
-
-
-
-// * Debug * //
-$(function() {
-    console.log('tams jquery');
-}());
-
-// * Debug * //
-const test = 5;
-console.log(test);
-
-// * Debug * //
-class Abecdewee {
-    constructor(height, width) {
-        this.width = width;
-        this.height = height;
-    }
-
-}
-// * Debug * //
-//var aaecdewee = new Abecdewee();
-//console.log(aaecdewee);
+console.log(kikou);
 
 
 //TODO Modularise code snippets for nav
