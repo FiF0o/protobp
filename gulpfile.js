@@ -4,10 +4,7 @@
  * if you find any bug or error, please submit an issue
  */
 
-//TODO Add ESlint for babel
-//TODO Change source/js structure to have /js at the root and change import on function.js
 //TODO !IMPORTANT! - Drop compass over Bourbon - !IMPORTANT!
-
 
 // Include gulp plugins
   var gulp = require('gulp'),
@@ -36,9 +33,6 @@
       async = require('async'),
       consolidate = require('gulp-consolidate'),
       babel = require('gulp-babel'),
-
-// npm bugs when trying to install it, needs to rename the package .gulp-util.DELETE to gulp-util - NEEDS sudo command for install
-// same with loadash.assign plugin
       gutil = require('gulp-util'),
       vinylSource = require('vinyl-source-stream'),
       buffer = require('vinyl-buffer'),
@@ -81,12 +75,8 @@
           errLogToConsole: true
         }
         //TODO low - Add option params for autoprefixer
-        //pleeeaseOpt: {
         //  autoprefixer: {browsers: ['last 2 versions', '> 2%']},
-        //  rem: ['16px'],
-        //  pseudoElements: true,
-        //  mqpacker: true,
-        //  minifier: !devBuild
+        //autoprefixerOpt: {
         //}
       },
       //TODO Refactor with config.js
@@ -122,56 +112,6 @@
   };
 
 log(pkg.name + ' ' + pkg.version + ' ' + config.environment + ' build');
-
-// *****************
-
-//gulp.task('testbro', function(){
-//  browserify('source/assets/js/functions.js')
-//      .bundle()
-//      .on('error', function(e){
-//        gutil.log(e)
-//      })
-//      //buffers file into a file named app.js before being piped into a dest folder
-//      .pipe(vinylSource('app.js'))
-//      .pipe(gulp.dest('build/assets/js'))
-//})
-
-// *****************
-//// add custom browserify options here
-//var customOpts = {
-//  entries: ['./source/assets/js/functions.js'],
-//  debug: true,
-//  transform: [babelify],
-//  // require: { jquery: 'jquery-browserify' }
-//};
-//var opts = assign({}, watchify.args, customOpts);
-//var b = watchify(browserify(opts));
-//
-//// add transformations here
-//// i.e. b.transform(coffeeify);
-//
-//gulp.task('zarm', bundle); // so you can run `gulp js` to build the file
-//b.on('update', bundle); // on any dep update, runs the bundler
-//b.on('log', gutil.log); // output build logs to terminal
-//
-//function bundle() {
-//  return b.bundle()
-//      // log errors if they happen
-//      .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-//      .pipe(vinylSource('app.js'))
-//      // optional, remove if you don't need to buffer file contents
-//      .pipe(buffer())
-//      // optional, remove if you dont want sourcemaps
-//      .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
-//      // Add transformation tasks to the pipeline here.
-//      .pipe(sourcemaps.write('./')) // writes .map file
-//      .pipe(gulp.dest('./build/assets/js'))
-//      //.pipe(browsersync().stream());
-//}
-//console.log('images.out: \n\n'+ images.out)
-
-// *****************
-
 
   // Global function to generate the bundle
   function bundle (bundler) {
@@ -257,16 +197,16 @@ gulp.task('image', function () {
           {
             // Compress, strip metadata, and rename original image
             rename: { suffix: '-original' }
-          }],
+          }]
 
         // Resize all PNG images to be retina ready
-        '*.png': [{
-          width: 320
-        },
-          {
-          width: 320 * 2,
-          rename: { suffix: '@2x' }
-        }]
+        //'*.png': [{
+        //  width: 320
+        //},
+        // {
+        // width: 320 * 2,
+        // rename: { suffix: '@2x' }
+        //}]
       },
         {
       // Global configuration for all images
@@ -405,16 +345,6 @@ gulp.task('image', function () {
     log('-> Favicon done! <-');
   });
 
-  ////TODO Needs to remove this task
-  //gulp.task('vendors', function () {
-  //  log('--> Vendors starting...<--');
-  //  return gulp.src(vendors.in)
-  //      .pipe($.newer(vendors.out))
-  //      .pipe(gulp.dest(vendors.out));
-  //  log('--> Vendors D0ne!<--');
-  //})
-
-
   gulp.task('iconfont', function(){
     var fontName = 'icons';
     var runTimestamp = Math.round(Date.now()/1000);
@@ -463,26 +393,8 @@ gulp.task('image', function () {
     return templates.pipe(gulp.dest(views.out));
     log('--> Templates D0ne!<--');
   });
+  
   //*/
-
-  //gulp.task('postcss', function () {
-  //  log('--> PostCSS Starting...<--');
-  //  var postprocessors = [
-  //    // can pass lost options e.g. var lost_options = { "gutter": "30px", "flexbox":"no-flex", "cycle": "auto", "map": "true" };
-  //    //lost(),
-  //    autoprefixer({browsers: ['last 2 version'], map: true})
-  //  ];
-  //
-  //  return gulp.src('build/assets/css/main.css')
-  //
-  //      //.pipe(sourcemaps.init())
-  //      .pipe(postcss(postprocessors))
-  //      //.pipe(sourcemaps.write('./'))
-  //      .pipe(gulp.dest('build/assets/css/main.css'));
-  //  log('PostCSS: ----> Autoprefixer done! <-----')
-  //
-  //})
-
   // Start BrowserSync
   gulp.task('browsersync', function () {
     log('-> Starting BrowserSync <-');
