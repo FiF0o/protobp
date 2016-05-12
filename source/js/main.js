@@ -1,10 +1,10 @@
 import $ from '../vendors/jquery/dist/jquery.js';
-import jsboot from  '../vendors/bootstrap/dist/js/bootstrap';
-
-console.log('jsboot');
-console.log(jsboot);
-
-// * Debug * //
+//import jsboot from  '../vendors/bootstrap/dist/js/bootstrap';
+//
+//console.log('jsboot');
+//console.log(jsboot);
+//
+//// * Debug * //
 console.log($);
 
 import kikou from './test';
@@ -19,15 +19,17 @@ console.log(kikou);
 //    $('ul.nav-list').toggleClass('nav-open').slideToggle('slow');
 //});
 
+(function(){
+    console.log('pure js iife')
+})()
 
-
-(function($) {
-    console.log('jQuery IIFE');
-})(jQuery);
-
-$(document).ready(function() {
-    console.log('document ready')
-})
+//(function($) {
+//    console.log('jQuery IIFE');
+//})(jQuery);
+//
+//$(document).ready(function() {
+//    console.log('document ready')
+//})
 
 // ****** HIDES RWD NAV  ****** //
 

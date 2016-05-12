@@ -121,8 +121,6 @@ var devBuild = (( config.environment || process.env.NODE_ENV || 'development').t
     };
 
 
-log(lessHint);
-
 log(pkg.name + ' ' + pkg.version + ' ' + config.environment + ' build');
 
 log('views.in:\n'+views.in+'\n\n')
@@ -142,6 +140,10 @@ gulp.task('less', function () {
                 console.log(error.message);
                 this.emit('end');
             }
+        }))
+        .pipe(lessHint({
+            //Options
+
         }))
         .pipe(less())
         .on('error', function (err) {

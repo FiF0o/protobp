@@ -1,0 +1,11 @@
+{
+    "emptyRule": true,
+    "spaceAfterPropertyName": "no_space",
+    "fileExtensions": [".less", ".css"],
+    "excludedFile": ["bootstrap.less"],
+    "spaceAfterPropertyColon": {
+        "enabled": true,
+        "style": "one_space"
+    },
+    "spaceBeforeBrace": false
+}

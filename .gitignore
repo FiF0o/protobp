@@ -83,14 +83,6 @@ build/
 source/vendors/
 .config.rb
 
-
-# Hosting #
-fif0o.github.io
-
-
-# Misc #
-test_img
-
 # Vendors #
 ###########
 source/vendors/
