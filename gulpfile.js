@@ -40,7 +40,7 @@ var gulp = require('gulp'),
     path = require('path'),
     responsive = require('gulp-responsive'),
     less = require('gulp-less'),
-    //lessLint = require('gulp-less-lint'),
+    lessHint = require('gulp-lesshint'),
     eslint = require('gulp-eslint');
 //TODO Check config.js and var in gulpfile.js to refactor. Is the structure
 // needed for the config vars in gulpfile.js?
@@ -119,6 +119,9 @@ var devBuild = (( config.environment || process.env.NODE_ENV || 'development').t
         out  : dest + (config.fonts[--config.fonts.length] == '/' ? config.fonts : config.fonts + '/'),
         watch: [source + (config.fonts[--config.fonts.length] == '/' ? config.fonts + '**/*' : config.fonts + '/**/*')]
     };
+
+
+log(lessHint);
 
 log(pkg.name + ' ' + pkg.version + ' ' + config.environment + ' build');
 
