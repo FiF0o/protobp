@@ -25,35 +25,47 @@ module.exports = function() {
     fonts: 'assets/fonts',
     /**
      * Views directory. This is the dir where all the Jade files should live
-     * Important: only will be compiled *.jade files in this exact dir and not any sub dir
-     * you could use a subdir to put partials on it and include in jade.
+     * Important: only will be compiled *.html files in this exact dir and not
+     * any sub dir
+     * you could use a subdir to put partials on it and include in html.
      */
     views: 'views/',
     /**
-     * As this is a Sass based project, this is the dir for the sass files. Every file
-     * under this dir will be watched for changes, but only the main.sass file
+     * As this is a less based project, this is the dir for the less files.
+     * Every file
+     * under this dir will be watched for changes, but only the main.less file
      * will be compiled.
      */
-    sass: 'sass/main.sass',
+    less: 'less/main.less',
     // Dir where the sass will be compiled
     css: 'assets/css',
     // Favicon
     favicon: 'favicon.ico',
     // This are the options that will be passed to the sass compiler
-    sassOptions: {
+    lessOptions: {
       /**
-       * This is how the compiled version of sass will look like
+       * This is how the compiled version of less will look like
        * Output style options are:
        * - expanded
        * - nested
        * - compact
        * - compressed
        */
-      outputStyle: 'expanded',
+      path: '',
+      filename: '',
+      compress: 'false',
       // Relative path to the css where the images dir is.
-      imagePath: '../img',
-      // Sass precision
-      precision: 3
+      imagePath: '../img'
+    },
+    lessJsOptions: {
+      //env: "development",
+      //async: false,
+      //fileAsync: false,
+      //poll: 1000,
+      //functions: {},
+      //dumpLineNumbers: "comments",
+      //relativeUrls: false,
+      //rootpath: ":/a.com/"
     },
     // Javascript directory
     jsDir: 'js',
@@ -73,7 +85,8 @@ module.exports = function() {
      * managed by bower and if the directory will be changed, you should change on
      * .bowerrc file in the root directory as well.
      */
-    //TODO change relative paths in the index.jade to point to the vendor folder and no longer bower_component
+    //TODO change relative paths in the index.html to point to the vendor
+    // folder and no longer bower_component
     vendors: 'vendors'
   };
   return config;
