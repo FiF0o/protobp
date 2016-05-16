@@ -1,10 +1,10 @@
 {
-  "name": "BoilerPlate",
+  "name": "BP Catalyst",
   "version": "1.0.0",
   "authors": [
     "Jon Laz"
   ],
-  "description": "Simple structure for a simple start to a simple site.",
+  "description": "prototype for BP portal",
   "main": "build/index.html",
   "keywords": [
     "boilerplate",

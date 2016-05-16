@@ -46,7 +46,9 @@ var gulp = require('gulp'),
 // needed for the config vars in gulpfile.js?
 
 // Configs
-var devBuild = (( config.environment || process.env.NODE_ENV || 'development').trim().toLowerCase() !== 'production'), source = config.source[--config.source.length] == '/' ? config.source : config.source + '/', dest = config.build[--config.build.length] == '/' ? config.build : config.build + '/', assets = config.assets[--config.assets.length] == '/' ? config.assets : config.assets + '/', pkg = require('./package.json'), images = {
+var devBuild = (( config.environment || process.env.NODE_ENV || 'development').trim().toLowerCase() !== 'production'), source = config.source[--config.source.length] == '/' ? config.source : config.source + '/',
+    dest = config.build[--config.build.length] == '/' ? config.build : config.build + '/', assets = config.assets[--config.assets.length] == '/' ? config.assets : config.assets + '/', pkg = require('./package.json'),
+    images = {
         in : source + (config.images[--config.images.length] == '/' ? config.images : config.images),
         out: dest + assets
     }, views = {
@@ -55,7 +57,7 @@ var devBuild = (( config.environment || process.env.NODE_ENV || 'development').t
         watch: config.source[--config.source.length] == '/' ? config.source + '**/*.html' : config.source + '/**.*html'
     }, styles = {
         in     : source + config.less,
-        watch  : [source + config.less.substring(0, (config.less.lastIndexOf('/') + 1)) + '**/*'],
+        watch  : [source + config.less.substring(0, (config.less.lastIndexOf('/') + 1)) + '**/*.less'],
         out    : dest + (config.css[--config.css.length] == '/' ? config.css : config.css + '/'),
         lessOpt: {
 
@@ -99,7 +101,8 @@ var devBuild = (( config.environment || process.env.NODE_ENV || 'development').t
         filename: config.jsName
     }, syncOpt = {
         server: {
-            baseDir: dest, index: config.syncOptions.index || 'index.html'
+            baseDir: dest,
+            index: config.syncOptions.index || 'index.html'
 
         },
         open  : config.syncOptions.open || false,
@@ -131,27 +134,26 @@ log('styles.in:\n'+styles.in+'\n\n')
 log('styles.out:\n'+styles.out+'\n\n')
 log('styles.watch:\n'+styles.watch+'\n\n')
 
-
+//TODO launch live reload on css not less
 gulp.task('less', function () {
-    gulp.src('source/less/main.less')
+    gulp.src('source/less/**/*.less')
+        .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-            }
+        .pipe(less({
+            // Specify search paths for @import directives
+            paths: ['source/less'],
+            // Specify a filename, for better error messages
+            filename: 'main.less',
+            compress: false
         }))
-        .pipe(lessHint({
-            //Options
-
-        }))
-        .pipe(less())
-        .on('error', function (err) {
-            console.log('error: ' + err)
+        //fixing gulp serve
+        // https://github.com/flatlogic/angular-material-dashboard/issues/12
+        .on('error', function(err) {
+            console.error('Error!', err.message)
         })
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('build/assets/css'))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.stream())
 });
 
 // Global function to generate the bundle
@@ -260,11 +262,11 @@ gulp.task('image', function () {
 /**
  * Tasks
  */
-gulp.task('lessLint', function () {
-    gulp.src([styles.watch + '.s+(a|c)ss', '!node_modules/**'])
-        .pipe(lessLint())
-        .pipe(lessLint.format())
-        .pipe(lessLint.failOnError());
+gulp.task('lessHint', function () {
+    gulp.src([styles.watch + '.less', '!node_modules/**'])
+        .pipe(lessHint());
+        //.pipe(lessHint.format())
+        //.pipe(lessHint.failOnError());
 });
 
 
@@ -435,7 +437,7 @@ gulp.task('browsersync', function () {
     browserSync(syncOpt);
 });
 
-
+//gulp.task('style-watch', ['less'], browserSync.reload);
 // Build Task
 // TODO include lessLint task
 // TODO Once Browserify is hooked up remove vendors tasks which will be obsolete
@@ -449,14 +451,32 @@ gulp.task('build', [
     'build:images',
     'watch'
 ]);
+gulp.task('test', function() {
+    gulp.src('source/less/**/*.less')
+        .pipe(less())
+        .pipe(gulp.dest('build/assets/css'))
 
+})
+log('dest+/**/*.css')
+log(dest + '**/*.css')
 // Watch Task
 // Task dependancy, watch is run when browsersync is finished ['browsersync']
-gulp.task('watch', ['browsersync'], function () {
+gulp.task('watch', ['less','browsersync'], function () {
+    //var reload = browserSync.reload;
+
     // Watch for style changes and compile
-    gulp.watch([styles.watch], ['less', browserSync.reload]);
+    gulp.watch([styles.watch], ['less']);
+    gulp.watch([dest + '**/*.css'], browserSync.reload);
+    //gulp.watch(styles.watch, ['style-watch']);
+
+
     // Watch for html changes and compile
-    gulp.watch(views.watch, ['html']);
+    gulp.watch([views.watch], ['html', browserSync.reload]);
+
+    //gulp.watch([styles.watch], ['less']);
+    //gulp.watch(views.watch).on('change', reload);
+
+
     // Watch for javascript changes and compile
     //gulp.watch(js.in, ['babel']);
     //TODO Remove watch task for js files as we are using browserify
