@@ -1,40 +1,14 @@
-requirejs.config({
-    shim     : {
-        "bootstrap" : {deps: ['jquery']}
-        //"highcharts": {deps: ['jquery'], exports: "Highcharts"}
-    }
-    // relative to /dist dir (root web server)
-    , baseUrl: "./", paths: {
-        jquery    : 'vendors/jquery/dist/jquery',
-        //highcharts: 'vendors/highcharts/highcharts',
-        bootstrap : 'vendors/bootstrap/dist/js/bootstrap'
-        // htmlshiv  : 'https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min'
-        // don't need to specify the extension, require.js handles it for you
-    }
-});
+import $ from '../vendors/jquery/dist/jquery.js';
+//import jsboot from  '../vendors/bootstrap/dist/js/bootstrap';
+//
+//console.log('jsboot');
+//console.log(jsboot);
+//
+//// * Debug * //
+console.log($);
 
-// define([], function() {}) call execute modules
-// can create config file for requirejs which will be loaded with define call
-// main.js will load the config file with a require call
-require([
-    'jquery',
-    'bootstrap'
-], function(
-    $,
-    Boot
-) {
-    $(function(){
-        console.log($)
-        console.log(Boot)
-    });
-
-    //var a = $;
-    //var b = Boot;
-    //console.log('a');
-    //console.log(a);
-    //console.log('b');
-    //console.log(b);
-});
+import kikou from './test';
+console.log(kikou);
 
 //import $ from '../vendors/jquery/dist/jquery.js';
 ////import Boot from '../vendors/bootstrap/dist/js/bootstrap.js';
@@ -43,9 +17,21 @@ require([
 //console.log($);
 ////console.log(Boot);
 
-//import kikou from './test';
-//console.log('kikou');
-//console.log(kikou);
+//TODO Modularise code snippets for nav
+// ****** RWD MOBILE NAV  ****** //
+
+//var mobileNav =
+//$('.nav-mobile').click(function() {
+//    $('ul.nav-list').toggleClass('nav-open').slideToggle('slow');
+//});
+
+(function(){
+    console.log('pure js iife')
+})()
+
+//(function($) {
+//    console.log('jQuery IIFE');
+//})(jQuery);
 //
 //
 ////TODO Modularise code snippets for nav
