@@ -1,13 +1,12 @@
 import $ from '../vendors/jquery/dist/jquery.js';
-//import jsboot from  '../vendors/bootstrap/dist/js/bootstrap';
-//
-//console.log('jsboot');
-//console.log(jsboot);
-//
+//import Boot from '../vendors/bootstrap/dist/js/bootstrap.js';
+
 //// * Debug * //
 console.log($);
+//console.log(Boot);
 
 import kikou from './test';
+console.log('kikou');
 console.log(kikou);
 
 
@@ -18,6 +17,11 @@ console.log(kikou);
 //$('.nav-mobile').click(function() {
 //    $('ul.nav-list').toggleClass('nav-open').slideToggle('slow');
 //});
+
+
+$('#change_management').click(function() {
+    console.log('div clicked!')
+})
 
 (function(){
     console.log('pure js iife')

@@ -1,7 +1,119 @@
-// bootstrap
+/* Do not change @import order
+ *********************************************
+ ***************** RULES *********************
+
+ ------------------- HTML ---------------------
+ - Attributes order: class, id, name, data-*, src,
+ for, type, href, value, title, alt, role, aria-*
+
+ - Reduce markups where possible
+
+ ------------------- CSS ---------------------
+ - Use variables as much as you can without colliding with Bootstrap
+ - Declaration order: Positioning, Box model, Typographic, Visual
+ - Don't use @import in <style> tags but links
+ - Media queries must be placed near CSS declarations
+ - Prefixes will be handled by autoprefixer
+ - Single declarations have break lines removed
+ - Limit shorthand notations where it is not needed
+ - Avoid nesting more than 3 levels deep for css specificity
+ - Comment as much as you can
+ - Classes: avoid using custom classes and use bootstrap as much as you can
+ use dashes, lowercase, avoid, arbitrary annotation, short and succinct,
+ meaningful names, structural or purposal names over presentational
+
+ - Avoid deep specificity (nesting) when styling where possible
+ - Use white space, breaks when commenting with a clear hierarchy
+*/
+
+
+// ************************************** //
+// **************** VARS **************** //
+//    http://getbootstrap.com/customize   //
+// ************************************** //
+
+
+//@bp-green: #009900;
+//@bp-lightgreen: #99CC00;
+//@bp-yellow: #FFE600;
+//@bp-white: #FFFFFF;
+
+//@bp-brightgreen: #ccff00;
+//@bp-darkgreen: #006633;
+//@bp-darkblue: #000099;
+//
+//@bp-silver: #999999;
+//@bp-darkgrey: #666666;
+//@bp-light-grey: #F2F2F2;
+//@bp-purple: #660099;
+//@bp-orange: #ff6600;
+//@bp-blue: #009EE0;
+//
+//@bp-font-dark: #666666;
+//@bp-font-light: #999999;
+//
+//// ------ color palette  - Main colors ------ //
+////@brand-primary: orange;
+////@brand-success: blue;
+////@brand-info: beige;
+////@brand-warning: beige;
+////@brand-danger: beige;
+//
+//
+//// ------ buttons ------ //
+////@btn-default-bg: @brand-primary;
+////@btn-primary-bg: yellow;
+////@btn-default-color: ;
+//@btn-default-color: @bp-white;
+//@btn-default-bg: @bp-green;
+////@btn-primary-bg: yellow;
+////@btn-default-color: @bp-white;
+//
+//
+//@border-radius-base: 0px;
+//@border-radius-large: 0px;
+//
+//@bg-body: @bp-white;
+//@text-color: @bp-font-dark;
+//@link-color: @bp-green;
+//@link-hover: @bp-lightgreen;
+//@link-hover-decoration: underline;
+
+
+//TODO load normalize
+
+//TODO Replace bootstrap fontawesome by plain fontawesome icons
+//TODO Fix bootstrap import
+
+// 0 - Imports from bootstrap
+/*
+  Getting bootstrap framwork to be used and overwritten as necessary to match styleguide
+*/
 @import '../vendors/bootstrap/less/bootstrap';
-@import '../vendors/bootstrap/less/navs';
-// override navs
+
+@import '../vendors/font-awesome/less/font-awesome';
+
+// 1 - Imports to override bootstrap vars
+@import "1-tools/bp-vars";
+
+// 2 - Imports from bootstrap components for overrides
+/*
+  Only modifying less properties for changing bootstrap default styling
+*/
+@import '_footer';
+
+// 3 - Imports from to add custom properties to Bootstrap components ; 2 - section
+/*
+  Will add or override properties from default bootstrap to match the design
+*/
+
+// 4 - Imports to add css at a page level
+/*
+  Will add css properties based on a page
+*/
+
+
+
 
 //.nav {
   //margin-bottom: 20px;
@@ -48,35 +160,75 @@
 //}
 
 
-@import "5-custom/_test2";
-@import "_testless";
+
+//@btn-primary-color: @bp-white;
 
 
-h1 {
-  color : red;
-  font-size: 4em;
+//custom class: align blocks inline
+// ************************************** //
+// **************** FORM **************** //
+// ************************************** //
+.form-inline {
+  display: inline;
+  //width: 75%;
+  > p {
+
+  }
+  > .form-control {
+    width: 65%;
+    min-width: 30%;
+    max-width: 70%;
+  }
+
 }
 
-.col-md-6{
-  background-color: black;
-  color: white;
-  border: 1px solid red;
-}
+// ************************************** //
+// ********** CUSTOM OVERRIDES ********** //
+// ************************************** //
 
-.row {
-  //background-color: green;
-  >.aclass {
-    background-color: green;
-    color: white;
+// **************** WELL **************** //
+.well {
+  border: none;
+  border-bottom: 4px solid @bp-lightgreen;
+
+  > h5 {
+    margin-top: 40px;
   }
 }
 
-.something{
 
+
+
+// ************************************** //
+// ******** BOOTSTRAP OVERRIDES ********* //
+// ************************************** //
+
+// ************ Thumbnail ************ //
+.thumbnail {
+  background-color: @bp-light-grey;
+  border: none;
+  border-bottom: 4px solid @bp-lightgreen;
+  padding: 0px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: @bp-green;
 }
 
 
-@import '_blabla';
-h3 {
-  color: darkred;
+
+// ********** Global overrides **********  //
+/*
+  Will override css globally here needs to be used as less as possible
+*/
+#future_mode {
+  background-image: url(http://www.lorempixum.com/960/280);
+}
+
+.jumbotron {
+  .caption {
+    background-color: rgba(255,255,255, .8);
+    padding: 20px;
+    width: 30%;
+  }
 }
