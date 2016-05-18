@@ -49,6 +49,9 @@
   Only modifying less properties for changing bootstrap default styling
   Need to override properties of bootstrap and avoid creating extra classes
 */
+@import '2-basics/bp-thumbnails';
+@import '2-basics/bp-well';
+@import '2-basics/bp-jumbotron';
 @import '_footer';
 
 // 3 - Imports from to add custom properties to Bootstrap components ; 2 - section
@@ -63,12 +66,14 @@
 */
 
 
-
 // ************************************** //
 // **************** FORM **************** //
 // ************************************** //
-
-//custom class: align blocks inline
+//TODO Move custom classes into separate modules
+/* .form-group from bootstrap
+  class is not used in bootstrap but added to the bootstrap .form-group class to add extra styling not available within bootstrap
+  custom class: align blocks inline
+*/
 .form-inline {
   display: inline;
   //width: 75%;
@@ -79,50 +84,23 @@
   }
 }
 
-
-// ************************************** //
-// ********** CUSTOM OVERRIDES ********** //
-// ************************************** //
-
-// **************** WELL **************** //
-.well {
-  border: none;
-  border-bottom: 4px solid @bp-lightgreen;
-  > h5 {
-    margin-top: 40px;
-  }
-}
-
-
-// ************************************** //
-// ******** BOOTSTRAP OVERRIDES ********* //
-// ************************************** //
-
-// ************ Thumbnail ************ //
-.thumbnail {
-  background-color: @bp-light-grey;
-  border: none;
-  border-bottom: 4px solid @bp-lightgreen;
-  padding: 0px;
-}
-
-h1, h2, h3, h4, h5 {
-  color: @bp-green;
-}
-
-
+//TODO Move into own modules
 // ********** Global overrides **********  //
 /*
   Will override css globally here needs to be used as less as possible
+  CSS styling at a page level - homepage
 */
 #future_mode {
   background-image: url(http://www.lorempixum.com/960/280);
 }
 
-.jumbotron {
-  .caption {
-    background-color: rgba(255,255,255, .8);
-    padding: 20px;
-    width: 30%;
-  }
+/*
+  Override custom bootstrap styling with the right brand color instead of global override
+  bp-vars.less
+  http://getbootstrap.com/customize/#less-variables
+  var to override is @brand-primary within type.less
+  https://github.com/twbs/bootstrap/blob/master/less/type.less
+*/
+h1, h2, h3, h4, h5 {
+  color: @bp-green;
 }
