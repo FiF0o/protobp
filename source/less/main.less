@@ -26,79 +26,28 @@
  - Use white space, breaks when commenting with a clear hierarchy
 */
 
-
-// ************************************** //
-// **************** VARS **************** //
-//    http://getbootstrap.com/customize   //
-// ************************************** //
-
-
-//@bp-green: #009900;
-//@bp-lightgreen: #99CC00;
-//@bp-yellow: #FFE600;
-//@bp-white: #FFFFFF;
-
-//@bp-brightgreen: #ccff00;
-//@bp-darkgreen: #006633;
-//@bp-darkblue: #000099;
-//
-//@bp-silver: #999999;
-//@bp-darkgrey: #666666;
-//@bp-light-grey: #F2F2F2;
-//@bp-purple: #660099;
-//@bp-orange: #ff6600;
-//@bp-blue: #009EE0;
-//
-//@bp-font-dark: #666666;
-//@bp-font-light: #999999;
-//
-//// ------ color palette  - Main colors ------ //
-////@brand-primary: orange;
-////@brand-success: blue;
-////@brand-info: beige;
-////@brand-warning: beige;
-////@brand-danger: beige;
-//
-//
-//// ------ buttons ------ //
-////@btn-default-bg: @brand-primary;
-////@btn-primary-bg: yellow;
-////@btn-default-color: ;
-//@btn-default-color: @bp-white;
-//@btn-default-bg: @bp-green;
-////@btn-primary-bg: yellow;
-////@btn-default-color: @bp-white;
-//
-//
-//@border-radius-base: 0px;
-//@border-radius-large: 0px;
-//
-//@bg-body: @bp-white;
-//@text-color: @bp-font-dark;
-//@link-color: @bp-green;
-//@link-hover: @bp-lightgreen;
-//@link-hover-decoration: underline;
-
-
 //TODO load normalize
-
-//TODO Replace bootstrap fontawesome by plain fontawesome icons
-//TODO Fix bootstrap import
-
 // 0 - Imports from bootstrap
 /*
-  Getting bootstrap framwork to be used and overwritten as necessary to match styleguide
+  Getting bootstrap framework to be used and overwritten as necessary to match styleguide
+  Bootstrap components: http://getbootstrap.com/components/#page-header
 */
 @import '../vendors/bootstrap/less/bootstrap';
-
 @import '../vendors/font-awesome/less/font-awesome';
 
 // 1 - Imports to override bootstrap vars
+/*
+  Source code of Bootstrap components is available here
+  https://github.com/twbs/bootstrap/tree/master/less
+  customization of bootstrap (vars list) is here: http://getbootstrap.com/customize/#less-variables
+
+*/
 @import "1-tools/bp-vars";
 
 // 2 - Imports from bootstrap components for overrides
 /*
   Only modifying less properties for changing bootstrap default styling
+  Need to override properties of bootstrap and avoid creating extra classes
 */
 @import '_footer';
 
@@ -107,6 +56,7 @@
   Will add or override properties from default bootstrap to match the design
 */
 
+
 // 4 - Imports to add css at a page level
 /*
   Will add css properties based on a page
@@ -114,73 +64,21 @@
 
 
 
-
-//.nav {
-  //margin-bottom: 20px;
-  //padding-left: 20px; // Override default ul/ol
-  //list-style: square;
-//}
-
-//.nav-tabs {
-  //border-bottom: 1px solid @nav-tabs-border-color;
-  //> li {
-  //  float: left;
-    // Make the list-items overlay the bottom border
-    //margin-bottom: -100px;
-
-    //// Actual tabs (as links)
-    //> a {
-    //  margin-right: 2px;
-    //  line-height: @line-height-base;
-    //  border: 1px solid transparent;
-    //  border-radius: @border-radius-base @border-radius-base 0 0;
-    //  &:hover {
-    //    border-color: @nav-tabs-link-hover-border-color @nav-tabs-link-hover-border-color @nav-tabs-border-color;
-    //  }
-    //}
-    //
-    //// Active state, and its :hover to override normal :hover
-    //&.active > a {
-    //  &,
-    //  &:hover,
-    //  &:focus {
-    //    color: @nav-tabs-active-link-hover-color;
-    //    background-color: @nav-tabs-active-link-hover-bg;
-    //    border: 1px solid @nav-tabs-active-link-hover-border-color;
-    //    border-bottom-color: transparent;
-    //    cursor: default;
-    //  }
-    //}
-  //}
-  // pulling this in mainly for less shorthand
-  //&.nav-justified {
-  //  .nav-justified();
-  //  .nav-tabs-justified();
-  //}
-//}
-
-
-
-//@btn-primary-color: @bp-white;
-
-
-//custom class: align blocks inline
 // ************************************** //
 // **************** FORM **************** //
 // ************************************** //
+
+//custom class: align blocks inline
 .form-inline {
   display: inline;
   //width: 75%;
-  > p {
-
-  }
   > .form-control {
     width: 65%;
     min-width: 30%;
     max-width: 70%;
   }
-
 }
+
 
 // ************************************** //
 // ********** CUSTOM OVERRIDES ********** //
@@ -190,13 +88,10 @@
 .well {
   border: none;
   border-bottom: 4px solid @bp-lightgreen;
-
   > h5 {
     margin-top: 40px;
   }
 }
-
-
 
 
 // ************************************** //
@@ -214,7 +109,6 @@
 h1, h2, h3, h4, h5 {
   color: @bp-green;
 }
-
 
 
 // ********** Global overrides **********  //
