@@ -39,6 +39,10 @@
 @bp-line-height-base: 1.3;
 @bp-base-gray: #FAFAFA;
 
+
+@bp-border-radius-base: 0px;
+
+@bp-well-bg: #F5F5F5;
 // **************** end CUSTOM VARS **************** //
 
 // ------ color palette  - Main colors ------ //
@@ -51,7 +55,12 @@
 
 // ------ Scaffolding ------ //
 @body-bg: @bp-white;
+@text-color: @bp-font-dark;
 @link-hover-decoration: underline;
+@border-radius-base: 0px;
+@border-radius-large: 0px;
+//@link-color: @bp-green;
+//@link-hover: @bp-lightgreen;
 
 // ------ Typography ------ //
 //@font-family-sans-serif: ;
@@ -62,12 +71,15 @@
 
 // ------ Iconography ------ //
 
+
 // ------ Components ------ //
+
 
 // ------ Tables ------ //
 
+
 // ------ buttons ------ //
-//@btn-default-bg: @brand-primary;
+@btn-default-bg: @brand-primary;
 //@btn-primary-bg: yellow;
 //@btn-default-color: ;
 @btn-default-color: @bp-white;
@@ -92,6 +104,16 @@
 // ------ Modals ------ //
 
 
+// ------ List group ------ //
+@list-group-bg: @bp-well-bg;
+@list-group-border: @bp-white;
+@list-group-border-radius: @bp-border-radius-base;
+@list-group-hover-bg: lighten(@bp-well-bg ,20%);
+@list-group-link-color: @bp-green;
+//@list-group-link-hover-color: ;
+//@list-group-link-heading-color: ;
+
+
 // ------ Panels ------ //
 
 
@@ -99,19 +121,20 @@
 
 
 // ------ Wells ------ //
+@well-bg: @bp-well-bg;
+@well-border: transparent;
 
 
+// ------ Breadcrumbs ------ //
+@breadcrumb-bg: @bp-white;
+@breadcrumb-color: @bp-font-light;
+@breadcrumb-active-color: @bp-green;
+@breadcrumb-separator: ">";
 
 // ------ Close ------ //
-
 //@close-color: ;
 
 
-@border-radius-base: 0px;
-@border-radius-large: 0px;
 
-@bg-body: @bp-white;
-@text-color: @bp-font-dark;
-@link-color: @bp-green;
-@link-hover: @bp-lightgreen;
+
 

@@ -219,3 +219,49 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+//TODO Move code to bp-well.less
+// counpound selector to override bootstrap default style
+div.well {
+
+  &.info {
+    margin-top: 30px;
+    background-color: @bp-white;
+
+    > div.well--link-block {
+      display: block;
+      padding: 10px;
+      margin: 20px;
+      width:100%;
+      background-color: red;
+      color: white;
+
+    }
+  }
+
+  > div.well--link-text {
+    padding-top: 40px;
+  }
+
+
+}
+
+
+  //> .well--link-block {
+  //  width: 100%;
+  //  height: 44px;
+  //  padding: 10px 15px;
+  //  color: @bp-white;
+  //  //background-color: @bp-green;
+  //  background-color: red;
+  //}
+
+
+
+div.well--link-block {
+  display: block;
+  padding: 10px;
+  width:inherit;
+  background-color: @bp-green;
+  color: white;
+}
+
