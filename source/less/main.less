@@ -50,6 +50,10 @@
 
 */
 @import "1-tools/bp-vars";
+@import "1-tools/bp-text";
+@import "1-tools/bp-forms";
+@import "1-tools/textarea";
+@import "1-tools/bp-dropdowns";
 
 
 // 2 - Imports from bootstrap components for overrides
@@ -60,6 +64,7 @@
 @import '2-basics/bp-thumbnails';
 @import '2-basics/bp-well';
 @import '2-basics/bp-jumbotron';
+@import '2-basics/bp-panels';
 @import '3-modules/footer';
 
 // 3 - Imports from to add custom properties to Bootstrap components ; 2 - section
@@ -109,35 +114,12 @@
   var to override is @brand-primary within type.less
   https://github.com/twbs/bootstrap/blob/master/less/type.less
 */
-h1, h2, h3, h4, h5 {
-  color: @bp-green;
-}
 
 
 // ********** custom class to override jumbotron **********
 //technic 1: remove padding and margin to position at the base
 //technic 2: position absolute and fixed height...
 //technic 3: compoound selector
-.jumbotron
-  &.jumbotron-banner {
-    //height: 300px;
-    padding: 0px;
-    > .caption {
-      margin: 0px;
-      padding: 0px;
-      //position: absolute;
-      //top: 0px;
-      //width: 40%;
-      //min-width: 30%;
-      //max-width: 50%;
-      //height: inherit;
-      > h3, p {
-        //height: inherit;
-      }
-
-  }
-
-}
 
 // debug clearfix
 #yoyo {
@@ -192,7 +174,7 @@ h1, h2, h3, h4, h5 {
  * ===============================================*/
 
 
-.box-shadow {
+.bp-box-shadow {
   width:100%;
   height:50px;
   background:#FFF;
@@ -219,49 +201,16 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-//TODO Move code to bp-well.less
-// counpound selector to override bootstrap default style
-div.well {
 
-  &.info {
-    margin-top: 30px;
-    background-color: @bp-white;
-
-    > div.well--link-block {
-      display: block;
-      padding: 10px;
-      margin: 20px;
-      width:100%;
-      background-color: red;
-      color: white;
-
-    }
+label {
+  // adds custom markup to have styling for label and info text below
+  > span {
+    font-weight: normal;
+    color: @bp-darkgrey;
   }
-
-  > div.well--link-text {
-    padding-top: 40px;
-  }
-
-
 }
 
-
-  //> .well--link-block {
-  //  width: 100%;
-  //  height: 44px;
-  //  padding: 10px 15px;
-  //  color: @bp-white;
-  //  //background-color: @bp-green;
-  //  background-color: red;
-  //}
-
-
-
-div.well--link-block {
-  display: block;
-  padding: 10px;
-  width:inherit;
-  background-color: @bp-green;
-  color: white;
+//TODO - Custom class to be replaced with a bootstrap .btn .btn-default ?
+.upload-button {
+  margin-top: 20px;
 }
-

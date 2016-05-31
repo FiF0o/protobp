@@ -1,0 +1,47 @@
+//@import "../../vendors/bootstrap/";
+@import "bp-vars";
+
+// ********************************************************* //
+// ************** CUSTOM STYLE FOR TEXT AREA  ************** //
+// ********************************************************* //
+
+textarea {
+  // applies border-box sizing to mnake it fluid
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid @gray-base;
+  border-radius: 2px;
+  color: @text-color;
+
+  //.box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  //.transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
+
+  .form-control-focus();
+  //.placeholder();
+
+}
+
+textarea[placeholder] {
+  color: red;
+  //background-color: red;
+}
+
+//::-webkit-textarea-placeholder {
+//  color: red;
+//}
+//
+//:-moz-placeholder { /* Firefox 18- */
+//  color: red;
+//}
+//
+//::-moz-placeholder {  /* Firefox 19+ */
+//  color: red;
+//}
+//
+//:-ms-input-placeholder {
+//  color: red;
+//}
+//
+//::textarea-placeholder {
+//  color: red;
+//}

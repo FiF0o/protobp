@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <title>Title</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Should be placed in the master in the - header element-->
+      <div class="row">
+        <header>
+          <div class="col-md-12">
+            placeholder for main nav here
+          </div>
+        </header>
+      </div> <!-- end row header -->
+
+      <div class="row">
+        <!-- Placeholder breadcrumb-->
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-home"></i></a></li>
+            <li><a href="#">Innovation</a></li>
+            <li class="active"><a href="#">My ideas</a></li>
+            <li><a href="#">Submit an idea</a></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="bp-box-shadow bp-shadow"></div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Submit an idea</h1>
+        </div>
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Idea: Upgrade Cloud Hosting</h3>
+            </div>
+            <div class="panel-body">
+
+              <form action="" class="form-horizontal">
+                <!--<div class="form-group">-->
+                  <!--<label for="inputEmail3" class="col-sm-2 control-label">Email</label>-->
+                  <!--<div class="col-sm-10">-->
+                    <!--<input type="email" class="form-control" id="inputEmail3" placeholder="Email">-->
+                  <!--</div>-->
+                <!--</div>-->
+                <div class="form-group">
+                  <label for="business-unit" class="col-sm-2 control-label">Business unit of idea</label>
+                  <div class="col-sm-10">
+                    <div class="dropdown">
+                      <button class="btn btn-default dropdown-toggle" type="button" id="business-unit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Please select a business unit
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="business-unit">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> <!-- end DD 1-->
+                <div class="form-group">
+                  <label for="funding-approval" class="col-sm-2 control-label">Business unit of idea</label>
+                  <div class="col-sm-10">
+                    <div class="dropdown">
+                      <button class="btn btn-default dropdown-toggle" type="button" id="funding-approval" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Don't know
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="funding-approval">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> <!-- end DD 1-->
+
+
+
+
+                <div class="form-group">
+                  <label for="summary" class="col-sm-2 control-label">Summary</label>
+                  <div class="col-sm-10">
+                    <textarea id="summary" placeholder="Please describe the idea in detail"></textarea>
+                  </div>
+                </div> <!-- end textarea 1-->
+                <div class="form-group">
+                  <label for="benefits" class="col-sm-2 control-label">What are the benefits of this idea?</label>
+                  <div class="col-sm-10">
+                    <textarea id="benefits" placeholder="Please describe the idea in detail"></textarea>
+                  </div>
+                </div> <!-- end textarea 2-->
+                <div class="form-group">
+                  <label for="risks" class="col-sm-2 control-label">What are the potential risks?</label>
+                  <div class="col-sm-10">
+                    <textarea id="risks" placeholder="Please describe the idea in detail"></textarea>
+                  </div>
+                </div> <!-- end textarea 2-->
+
+              </form> <!-- end form fields -->
+
+              <form class="form-horizontal" action="upload.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="supporting-documents" class="col-sm-2 control-label">Select image to upload:<br/><span>(Pdf, doc, jpg, max file size 2mb)</span></label>
+                  <div class="col-sm-10">
+                    <input type="file" name="supportingDocuments" id="supporting-documents">
+                    <input type="submit" class="upload-button" value="Upload file" name="submit">
+                  </div>
+                </div>
+             </form> <!-- end form upload -->
+
+            <div class="col-md-12 pull-right">
+              <div class="pull-right">
+                  <button type="submit" class="btn btn-primary" id="#submit_form">Submit<span>&nbsp;</span><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+              </div>
+            </div> <!-- end button -->
+
+            </div> <!-- end panel body -->
+          </div> <!-- panel panel-default -->
+        </div> <!-- col-md-12 -->
+
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+
+   <!-- Should be placed in the master in the - footer element-->
+    <footer>
+      <ul>
+          <li>Contact</li>
+      </ul>
+      <span><span>&copy;</span>1996-2016 p.l.c</span>
+    </footer>
+
+    <!-- custom js for the app -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

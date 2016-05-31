@@ -14,7 +14,9 @@
 
   > li {
     display: inline-block;
-
+    > a {
+      color: red !important;
+    }
     + li:before {
       content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
       padding: 0 5px;

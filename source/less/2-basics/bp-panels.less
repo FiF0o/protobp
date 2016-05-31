@@ -1,0 +1,22 @@
+// Loading default bootstrap panels class
+@import '../1-tools/bp-vars';
+
+//well bootstrap class overrides
+
+// ************************************** //
+// ********** CUSTOM OVERRIDES ********** //
+// ************************************** //
+
+// **************** PANELS **************** //
+
+.panel-heading {
+  //TODO Fix - border-bottom not being shown even if CSS is rendered
+  border-bottom: 2px solid red;
+}
+
+.panel-body {
+  // add property to have the right styling
+  //TODO - Try to apply it to the heading
+  border-top: 4px solid @bp-lightgreen;
+
+}

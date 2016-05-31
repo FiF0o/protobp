@@ -10,7 +10,7 @@
 //    http://getbootstrap.com/customize   //
 // ************************************** //
 
-// **************** CUSTOM VARS **************** //
+// **************** 0 - CUSTOM VARS **************** //
 //TODO Fix vars import in _footer.less / @bp-font-light
 //TODO Fix vars import in bp-thumbnails.less / @bp-light-grey and @bp-lightgreen
 //TODO Fix vars import in bp-well.less / @bp-lightgreen
@@ -18,7 +18,6 @@
 @bp-lightgreen: #99CC00;
 @bp-yellow: #FFE600;
 @bp-white: #FFFFFF;
-
 
 @bp-brightgreen: #ccff00;
 @bp-darkgreen: #006633;
@@ -43,8 +42,14 @@
 @bp-border-radius-base: 0px;
 
 @bp-well-bg: #F5F5F5;
-// **************** end CUSTOM VARS **************** //
 
+@bp-panel-inner-border: #F2F2F2;
+// **************** 0 - end CUSTOM VARS **************** //
+
+
+
+
+// **************** 1 - BOOTSTRAP VARS OVERRIDES**************** //
 // ------ color palette  - Main colors ------ //
 @gray-base: @bp-base-gray;
 @brand-primary: @bp-green;
@@ -68,26 +73,38 @@
 //@font-family-monospace: ;
 //@font-size-base: ;
 @line-height-base: @bp-line-height-base;
+// **************** 1 - end BOOTSTRAP OVERRIDES**************** //
+
+
+
+// **************** 2 - BOOSTRAP COMPONENTS OVERRIDES**************** //
+// http://getbootstrap.com/customize/
 
 // ------ Iconography ------ //
 
 
 // ------ Components ------ //
+//@component-active-color: yellow;
+//@component-active-bg: red;
 
 
 // ------ Tables ------ //
 
 
-// ------ buttons ------ //
-@btn-default-bg: @brand-primary;
-//@btn-primary-bg: yellow;
+// ------ Buttons ------ //
+@btn-default-bg: @bp-darkgrey;
+@btn-primary-bg: @brand-primary;
 //@btn-default-color: ;
 @btn-default-color: @bp-white;
 //@btn-default-bg: @bp-green;
 //@btn-primary-bg: yellow;
 //@btn-default-color: @bp-white;
 
-
+// ------ Dropdowns ------ //
+@dropdown-bg: @bp-white;
+@dropdown-link-hover-color: @brand-primary;
+@dropdown-link-hover-bg: @gray-base;
+@dropdown-link-active-color: @component-active-color;
 // ------ Navbar ------ //
 
 
@@ -95,6 +112,14 @@
 
 
 // ------ Tabs ------ //
+
+
+// ------ Forms ------ //
+@input-border: @gray-base;
+@input-border-radius: 2px;
+@input-border-focus: @brand-primary;
+@input-color: @text-color;
+//@input-color-placeholder: red;
 
 
 // ------ Jumbotron ------ //
@@ -115,7 +140,11 @@
 
 
 // ------ Panels ------ //
-
+@panel-bg: @bp-base-gray;
+@panel-inner-border: transparent;
+@panel-default-text: @bp-darkgreen;
+@panel-default-border: @bp-panel-inner-border;
+@panel-default-heading-bg: @bp-panel-inner-border;
 
 // ------ Thumbnails ------ //
 
@@ -127,14 +156,14 @@
 
 // ------ Breadcrumbs ------ //
 @breadcrumb-bg: @bp-white;
-@breadcrumb-color: @bp-font-light;
-@breadcrumb-active-color: @bp-green;
+@breadcrumb-color: @brand-primary;
+@breadcrumb-active-color: @bp-font-light;
 @breadcrumb-separator: ">";
 
 // ------ Close ------ //
 //@close-color: ;
 
 
-
+// **************** 2 - end COMPONENTS OVERRIDES**************** //
 
 
