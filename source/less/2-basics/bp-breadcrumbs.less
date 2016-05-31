@@ -1,4 +1,4 @@
-@import "../../vendors/bootstrap/less/breadcrumbs";
+//@import "../../vendors/bootstrap/less/breadcrumbs";
 @import '../1-tools/bp-vars';
 
 // ************************************** //
@@ -6,26 +6,42 @@
 // ************************************** //
 
 .breadcrumb {
-  padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal;
-  margin-bottom: @line-height-computed;
-  list-style: none;
-  background-color: @breadcrumb-bg;
-  border-radius: @border-radius-base;
+  //padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal;
+  //margin-bottom: @line-height-computed;
+  //list-style: none;
+  //background-color: @breadcrumb-bg;
+  //border-radius: @border-radius-base;
+  font-size: 1.1em;
 
   > li {
-    display: inline-block;
+    //display: inline-block;
+
+    // Custom
+    //traverse DOM to change first element styling
     > a {
-      color: red !important;
+
+      > i {
+
+        &:first-child {
+          font-size: 1.8em;
+          font-weight: 800;
+        }
+
+      }
     }
+
     + li:before {
-      content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
-      padding: 0 5px;
+      //content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+      //padding: 0 5px;
+
+      //custom properties added to .breadcrumb component
+      font-weight: 800;
+      font-size: 2em;
       color: @bp-brightgreen;
     }
   }
 
   > .active {
-    color: @bp-brightgreen;
-
+    color: @bp-base-gray;
   }
 }
