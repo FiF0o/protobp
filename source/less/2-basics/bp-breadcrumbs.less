@@ -15,10 +15,16 @@
 
   > li {
     //display: inline-block;
-
+    //color: @brand-primary;
+    //todo - Fix ugly hack to add .active class to a in breadcrumbs, > .active not working...
     // Custom
     //traverse DOM to change first element styling
     > a {
+      color: @brand-primary;
+
+      &.active {
+        color: @bp-font-dark;
+      }
 
       > i {
 
@@ -39,9 +45,16 @@
       font-size: 2em;
       color: @bp-brightgreen;
     }
+
+    //adds selector on li to change bootstrap styling as > .active is not working
+    //  &.active {
+    //    color: @bp-font-dark;
+    //  }
+    }
   }
 
   > .active {
     color: @bp-base-gray;
   }
-}
+
+
