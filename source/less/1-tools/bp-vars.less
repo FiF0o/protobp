@@ -45,6 +45,8 @@
 // - - - - - - - - Bootstrap components - - - - - - - - //
 @bp-well-bg: #F5F5F5;
 
+@bp-list-group-bg: #EEEEEE;
+
 @bp-panel-inner-border: #F2F2F2;
 // -------------------------------------- //
 // **************** 0 - end CUSTOM VARS **************** //
@@ -136,10 +138,10 @@
 
 
 // ------ List group ------ //
-@list-group-bg: @bp-well-bg;
+@list-group-bg: @bp-list-group-bg;
 @list-group-border: @bp-white;
 @list-group-border-radius: @bp-border-radius-base;
-@list-group-hover-bg: lighten(@bp-well-bg ,20%);
+@list-group-hover-bg: @bp-well-bg;
 @list-group-link-color: @bp-green;
 //@list-group-link-hover-color: ;
 //@list-group-link-heading-color: ;
@@ -151,6 +153,7 @@
 @panel-default-text: @bp-darkgreen;
 @panel-default-border: @bp-panel-inner-border;
 @panel-default-heading-bg: @bp-panel-inner-border;
+//@list-group-active-text-color: @bp-well-bg;
 
 // ------ Thumbnails ------ //
 

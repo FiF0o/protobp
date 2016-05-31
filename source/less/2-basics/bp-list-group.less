@@ -1,3 +1,14 @@
 //@import "../../vendors/bootstrap/less/list-group";
-//@import '../1-tools/bp-vars';
+@import '../1-tools/bp-vars';
 
+.list-group {
+  > .list-group-item {
+
+    &.active {
+      border: @bp-white;
+      background-color: @bp-well-bg;
+      color: @text-color;
+    }
+  }
+
+}
