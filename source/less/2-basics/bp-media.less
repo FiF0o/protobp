@@ -12,6 +12,7 @@
 }
 
 .media-heading {
+  padding-bottom: .8em;
   //creates custom BEM class to override bootstrap default behaviour
   &.media-body--title {
     font-size: 1.2em;
@@ -22,7 +23,6 @@
 }
 
 .media-body {
-
   // adds custom markup in bootstrap media
   > span {
     color: @brand-primary;
@@ -31,6 +31,21 @@
 
   }
 
+  &:last-child {
+    color: @brand-primary;
+  }
+
 }
 
 
+.media-object {
+  //add custom class
+  &.media-object--profile {
+    border: 1px solid @bp-panel-inner-border;
+  }
+}
+
+// custom class
+.media-body--text {
+  color: @text-color;
+}

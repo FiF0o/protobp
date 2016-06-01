@@ -1,0 +1,22 @@
+// Custom less file not avaialable in bootstrap to style components used in accordions
+// accordions are based on `panels.less`
+// overwriting by adding coumpound selectors to .panel
+@import '../1-tools/bp-vars';
+
+
+
+//guard class (uppermost to style accordion bloc - used for specificity)
+.panel--accordion {
+
+}
+
+
+.panel-heading {
+  //custom class to override default panel-heading style
+  &.panel-heading--accordion {
+    background-color: @bp-list-group-bg;
+    color: @brand-primary;
+  }
+
+
+}
