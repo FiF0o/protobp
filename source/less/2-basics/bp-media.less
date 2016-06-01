@@ -1,0 +1,36 @@
+@import '../1-tools/bp-vars';
+
+
+.media {
+  padding-bottom: 1em;
+  border-bottom: 1px solid @bp-panel-inner-border;
+
+  // adds custom styling on the last element
+  &:last-child{
+    margin-bottom: 10px;
+  }
+}
+
+.media-heading {
+  //creates custom BEM class to override bootstrap default behaviour
+  &.media-body--title {
+    font-size: 1.2em;
+    color: @text-color;
+    font-weight: 400;
+  }
+
+}
+
+.media-body {
+
+  // adds custom markup in bootstrap media
+  > span {
+    color: @brand-primary;
+    font-size: 1em;
+
+
+  }
+
+}
+
+
