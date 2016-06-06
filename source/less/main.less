@@ -269,3 +269,37 @@ label {
     background-color: @bp-lightgreen;
   }
 }
+
+.dropdown--icon {
+  > a {
+    //display: inline-block;
+    position: relative;
+    //float: left;
+    //padding: 0 20px;
+
+
+    // Add separators after links
+    &:after {
+      content: "";
+      background: #ccc;
+      position: absolute;
+      bottom: 45%;
+      left: 0;
+      height: 15%;
+      width: 1px;
+    }
+  }
+}
+
+
+// Remove separators after links on Tablet
+@media screen and (max-width: @screen-tablet) {
+  .dropdown--icon {
+    > a {
+      &:after {
+        display: none;
+      }
+    }
+
+  }
+}
