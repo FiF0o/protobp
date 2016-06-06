@@ -141,10 +141,29 @@
   width: auto;
 }
 
-
+.navbar-default .navbar-nav > .open > a {
+  //Fix - Remove @bp-lightgreen color when link is focused, hovered, active
+  background-color: transparent;
+  &:hover {
+    background-color: transparent;
+  }
+  &:active, &:focus {
+    background-color: transparent;
+  }
+}
 
 //ul.nav .navbar-nav .navbar-right > li > a {
 //  //display:table-cell;    /*Add this*/
 //  //vertical-align:middle; /
 //}
 
+//.navbar-default .navbar-nav > .active > a {
+//  color: red;
+//  background-color: transparent;
+//}
+
+//.navbar-default .navbar-nav > .active > a
+//.navbar-default .navbar-nav > .active > a:hover,
+//.navbar-default .navbar-nav > .active > a:focus {
+//
+//}
