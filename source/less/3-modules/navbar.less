@@ -1,26 +1,13 @@
+@import '../../vendors/bootstrap/less/mixins';
 @import '../../vendors/bootstrap/less/navbar';
 @import '../1-tools/bp-vars';
 
-//ul {
-//  &.nav {
-//
-//    &.navbar-nav {
-//      //custom class
-//      &.navbar-nav--full {
-//        width: 100%;
-//        background-color: @brand-primary;
-//        //color: @bp-white;
-//
-//      }
-//    }
-//  }
-//}
-
+//guard class to override .navbar-nav class
 .navbar-nav--full {
   width: 100%;
   background-color: @brand-primary;
   > li > a {
-    border-right: 1px solid red;
+    border-right: 1px solid #3E7C2E;
   }
 }
 //.navbar-brand {
@@ -37,12 +24,29 @@
 
 .navbar-default {
   .navbar-nav {
+    //> .vertical-separator {
+    //  position: relative;
+    //  display: inline-block;
+    //  color: white;
+    //  background-color: orange;
+    //  &:after {
+    //    background: black;
+    //    position: absolute;
+    //    bottom: 0;
+    //    left: 0;
+    //    height: 50%;
+    //    width: 1px;
+    //  }
+    //}
+
     &.navbar-nav--full {
       > li > a {
-        color: red;
+        color: @bp-white;
         &:hover {
-          background-color: black;
-          color: white;
+          //background-color: gradient(top, #8BEB3E 0%, #8BEB3E 90%, #3366FF 90%, #3366FF 100%);
+          background-image: linear-gradient(to bottom, @bp-darkgreen 0%, @bp-darkgreen 90%, @bp-yellow 90%, @bp-yellow 100%);
+          //border-bottom: 4px solid @bp-yellow;
+          //color: white;
 
         }
         //&:active {
@@ -56,11 +60,7 @@
   }
 }
 
-
-//.navbar-nav.navbar-nav--full > li > a {
-//  color: red
-
-
+// ************* From BOOTSTRAP ************* //
 //.navbar-default {
 //
 //  > .navbar-nav {
@@ -126,3 +126,25 @@
 //    }
 //  }
 //}
+// ********************* END ********************* //
+
+//Override brand image
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand > img {
+  display: inline-block;
+  margin-right: 15px;
+
+  height: 100%;
+  padding-top: 10px;
+  width: auto;
+}
+
+
+
+//ul.nav .navbar-nav .navbar-right > li > a {
+//  //display:table-cell;    /*Add this*/
+//  //vertical-align:middle; /
+//}
+
