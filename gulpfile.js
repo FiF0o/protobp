@@ -451,7 +451,7 @@ gulp.task('build', [
     'build:images',
     'watch'
 ]);
-gulp.task('test', function() {
+gulp.task('allless', function() {
     gulp.src('source/less/**/*.less')
         .pipe(less())
         .pipe(gulp.dest('build/assets/css'))

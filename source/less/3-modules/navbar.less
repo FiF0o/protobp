@@ -1,0 +1,128 @@
+@import '../../vendors/bootstrap/less/navbar';
+@import '../1-tools/bp-vars';
+
+//ul {
+//  &.nav {
+//
+//    &.navbar-nav {
+//      //custom class
+//      &.navbar-nav--full {
+//        width: 100%;
+//        background-color: @brand-primary;
+//        //color: @bp-white;
+//
+//      }
+//    }
+//  }
+//}
+
+.navbar-nav--full {
+  width: 100%;
+  background-color: @brand-primary;
+  > li > a {
+    border-right: 1px solid red;
+  }
+}
+//.navbar-brand {
+
+
+.navbar {
+  > .container-fluid & {
+    // removes padding
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+//}
+
+.navbar-default {
+  .navbar-nav {
+    &.navbar-nav--full {
+      > li > a {
+        color: red;
+        &:hover {
+          background-color: black;
+          color: white;
+
+        }
+        //&:active {
+        //  color: blue;
+        //  background-color: red;
+        //}
+      }
+
+    }
+
+  }
+}
+
+
+//.navbar-nav.navbar-nav--full > li > a {
+//  color: red
+
+
+//.navbar-default {
+//
+//  > .navbar-nav {
+//    > li {
+//
+//      > a {
+//        color: red;
+//      }
+//    }
+//
+//  }
+//}
+//.navbar-nav {
+//   > li > a {
+//
+//   }
+//}
+//.navbar-nav {
+//  margin: (@navbar-padding-vertical / 2) -@navbar-padding-horizontal;
+//
+//  > li > a {
+//    padding-top:    10px;
+//    padding-bottom: 10px;
+//
+//    line-height: @line-height-computed;
+//  }
+//
+//  @media (max-width: @grid-float-breakpoint-max) {
+//    // Dropdowns get custom display when collapsed
+//    .open .dropdown-menu {
+//      position: static;
+//      float: none;
+//      width: auto;
+//      margin-top: 0;
+//      background-color: transparent;
+//      border: 0;
+//      box-shadow: none;
+//      > li > a,
+//      .dropdown-header {
+//        padding: 5px 15px 5px 25px;
+//      }
+//      > li > a {
+//        line-height: @line-height-computed;
+//        &:hover,
+//        &:focus {
+//          background-image: none;
+//        }
+//      }
+//    }
+//  }
+//
+//  // Uncollapse the nav
+//  @media (min-width: @grid-float-breakpoint) {
+//    float: left;
+//    margin: 0;
+//
+//    > li {
+//      float: left;
+//      > a {
+//        padding-top:    @navbar-padding-vertical;
+//        padding-bottom: @navbar-padding-vertical;
+//      }
+//    }
+//  }
+//}
