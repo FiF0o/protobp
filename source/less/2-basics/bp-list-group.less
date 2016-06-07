@@ -8,7 +8,8 @@
   }
 
   > .list-group-item {
-
+    //overrides default height
+    padding: 20px 15px;
     &.active {
       border: @bp-white;
       background-color: @bp-well-bg;
@@ -16,4 +17,12 @@
     }
   }
 
+}
+
+.dropdown {
+  > .dropdown-toggle {
+    > span {
+      color: @bp-lightgreen;
+    }
+  }
 }

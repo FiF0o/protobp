@@ -14,6 +14,12 @@
   border-bottom: 4px solid @bp-lightgreen;
   box-shadow: none;
   //border-bottom: 4px solid #99CC00;
+
+  > h2 {
+    > i {
+      color: @bp-silver;
+    }
+  }
   > h5 {
     margin-top: 40px;
   }
@@ -23,10 +29,17 @@
 // coumpound selector to override bootstrap default style
 .well {
 
+
+
   &.info {
-    margin-top: 30px;
+    //margin-top: 30px;
     background-color: @bp-white;
-    border: none;
+    //border: none;
+    //border-bottom: 2px solid red;
+    border-bottom: 4px solid @bp-lightgreen;
+    &.no-border {
+      border: none;
+    }
   }
   > .well--link-block {
     //Needs to be well info in the html markup to work
@@ -35,6 +48,11 @@
     width:inherit;
     background-color: @bp-green;
     color: white;
+    > span {
+      &:first-child {
+        color: @bp-lightgreen;
+      }
+    }
   }
 
   > div.well--link-text {

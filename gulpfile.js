@@ -404,6 +404,11 @@ gulp.task('iconfont', function () {
     log('--> Iconfont D0ne!<--');
 });
 
+gulp.task('fonttypo', function() {
+    return gulp.src(source + '/assets/fonts/*.otf')
+        .pipe(gulp.dest('build/assets/fonts'));
+})
+
 //TODO Add config variables (global) for views, assets folders and refactor
 // tasks Compile Jade templates /*
 gulp.task('html', function () {
@@ -446,6 +451,7 @@ gulp.task('build', [
     'html',
     'less',
     'babel',
+    'fonttypo',
     'iconfont',
     'favicon',
     'build:images',

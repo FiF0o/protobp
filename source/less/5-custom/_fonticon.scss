@@ -41,11 +41,23 @@
 @function icon-char($filename) {
   $char: "";
 
-  @if $filename == ic_g_translate_black_24px {
+  @if $filename == UniversLTPro-45Light.otf {
   $char: "\E001";
 }
-  @if $filename == twitter {
+  @if $filename == UniversNextPro-Bold.otf {
   $char: "\E002";
+}
+  @if $filename == UniversNextPro-Light.otf {
+  $char: "\E003";
+}
+  @if $filename == UniversNextPro-Regular.otf {
+  $char: "\E004";
+}
+  @if $filename == ic_g_translate_black_24px {
+  $char: "\E005";
+}
+  @if $filename == twitter {
+  $char: "\E006";
 }
 
 @return $char;
@@ -62,6 +74,18 @@
 }
 }
 
+.icon-UniversLTPro-45Light.otf {
+  @include icon(UniversLTPro-45Light.otf);
+}
+.icon-UniversNextPro-Bold.otf {
+  @include icon(UniversNextPro-Bold.otf);
+}
+.icon-UniversNextPro-Light.otf {
+  @include icon(UniversNextPro-Light.otf);
+}
+.icon-UniversNextPro-Regular.otf {
+  @include icon(UniversNextPro-Regular.otf);
+}
 .icon-ic_g_translate_black_24px {
   @include icon(ic_g_translate_black_24px);
 }

@@ -1,0 +1,65 @@
+// Mixin for generating @font-face rules
+.font-face( @family, @baseFilename, @weight, @style: normal ) {
+
+  @font-face {
+    font-family: @family;
+    //path to font in src
+    src: url("../fonts/@{baseFilename}.otf") format('opentype');
+    //src: url("../fonts/@{baseFilename}.eot");
+    //src: url("../fonts/@{baseFilename}.eot?#iefix") format('embedded-opentype'),
+    //url('../fonts/@{baseFilename}.woff') format('woff'),
+    //url('../fonts/@{baseFilename}.ttf') format('truetype'),
+    //url('../fonts/@{baseFilename}.svg') format('svg');
+    font-weight: @weight;
+    font-style: @style;
+  }
+}
+
+@univers-font-family: 'Univers Next Pro';
+@univers-lt-font-family: 'Univers LT Pro';
+
+///*
+//  Univers Sans, Extra Thin (200)
+//*/
+//.font-face(@univers-font-family, 'universsansxthin-webfont', 100);
+
+///*
+//  Univers Sans, Thin (200)
+//*/
+//.font-face(@univers-font-family, 'universsansthin-webfont', 200);
+
+/*
+  Univers Sans, Light (300)
+*/
+.font-face(@univers-font-family, 'UniversNextPro-Light', 300);
+//.font-face(@univers-font-family, 'universsanslight-italic-webfont', 300, italic);
+
+/*
+  Univers Sans, Book (400 / normal)
+*/
+.font-face(@univers-font-family, 'UniversNextPro-Regular', 400);
+
+///*
+//  Univers Sans, Regular (500)  [Not sure, but this MIGHT be the same as "Book", although kerning looks different]
+//*/
+//.font-face(@univers-font-family, 'universsansmedium-webfont', 500);
+
+///*
+//  Univers Sans, Medium (600)
+//*/
+//.font-face(@univers-font-family, 'universsansmedium-webfont', 600);
+
+/*
+  Univers Sans, Bold (700 / bold)
+*/
+.font-face(@univers-font-family, 'UniversNextPro-Bold', 700);
+
+///*
+//  Univers Sans, Extra Bold (800)
+//*/
+//.font-face(@univers-font-family, 'universsansxbold-webfont', 800);
+
+/*
+  Univers LT, Light (300)
+*/
+.font-face(@univers-lt-font-family, 'UniversLTPro-45Light', 300);

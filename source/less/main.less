@@ -70,6 +70,7 @@
 @import '2-basics/bp-jumbotron';
 @import '2-basics/bp-panels';
 @import '2-basics/bp-media';
+@import '2-basics/bp-navs';
 
 
 // 3 - Imports from to add custom properties to Bootstrap components ; 2 - section
@@ -226,8 +227,15 @@ label {
 
 .dropdown {
   &.dropdown--icon {
+
+    &:last-child {
+      padding-right: 20px;
+    }
+
     > a {
       font-size: 26px;
+
+
       > span {
         > i {
           font-size: 26px;
@@ -302,4 +310,10 @@ label {
     }
 
   }
+}
+
+@import "1-tools/bp-fonts";
+h1 {
+  color: red;
+  font-family: "Univers Next Pro";
 }
