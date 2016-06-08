@@ -229,3 +229,58 @@ ul.nav .navbar-nav .navbar-right{padding-top:20px;}
     }
   }
 }
+
+
+.navbar-toggle {
+  //position: relative;
+  //float: right;
+  //margin-right: 0px;
+  //padding: 9px 10px;
+  //margin-top: 27px;
+  //margin-bottom: 27px;
+  background-color: @brand-primary;
+  //background-image: none;
+  //border: 1px solid transparent;
+  //border-radius: 0px;
+
+}
+
+#menu-nav {
+  &:hover {
+    background-color: @bp-lightgreen;
+  }
+}
+
+.dropdown--icon {
+  > a {
+    //display: inline-block;
+    position: relative;
+    //float: left;
+    //padding: 0 20px;
+
+
+    // Add separators after links
+    &:after {
+      content: "";
+      background: #ccc;
+      position: absolute;
+      bottom: 45%;
+      left: 0;
+      height: 15%;
+      width: 1px;
+    }
+  }
+}
+
+
+// Remove separators after links on Tablet
+@media screen and (max-width: @screen-tablet) {
+  .dropdown--icon {
+    > a {
+      &:after {
+        display: none;
+      }
+    }
+
+  }
+}

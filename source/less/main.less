@@ -49,6 +49,7 @@
   customization of bootstrap (vars list) is here: http://getbootstrap.com/customize/#less-variables
 
 */
+@import "1-tools/bp-fonts";
 @import "1-tools/bp-vars";
 @import "1-tools/bp-grid";
 @import "1-tools/bp-text";
@@ -88,23 +89,6 @@
 */
 
 
-// ************************************** //
-// **************** FORM **************** //
-// ************************************** //
-//TODO Move custom classes into separate modules
-/* .form-group from bootstrap
-  class is not used in bootstrap but added to the bootstrap .form-group class to add extra styling not available within bootstrap
-  custom class: align blocks inline
-*/
-.form-inline {
-  display: inline;
-  //width: 75%;
-  > .form-control {
-    width: 65%;
-    min-width: 30%;
-    max-width: 70%;
-  }
-}
 
 //TODO Move into own modules
 // ********** Global overrides **********  //
@@ -210,110 +194,3 @@
   }
 }
 
-
-label {
-  // adds custom markup to have styling for label and info text below
-  > span {
-    font-weight: normal;
-    color: @bp-darkgrey;
-  }
-}
-
-//TODO - Custom class to be replaced with a bootstrap .btn .btn-default ?
-.upload-button {
-  margin-top: 20px;
-}
-
-
-.dropdown {
-  &.dropdown--icon {
-
-    &:last-child {
-      padding-right: 20px;
-    }
-
-    > a {
-      font-size: 26px;
-
-
-      > span {
-        > i {
-          font-size: 26px;
-          color: @bp-darkgrey;
-        }
-
-
-      }
-      //font-size: 26px;
-      //color: @bp-darkgrey;
-      //border-right: 1px solid red;
-      //&:last-child{
-      //  border: none;
-      //}
-      //&:hover {
-      //  color: orange;
-      //}
-    }
-  }
-
-}
-
-.navbar-toggle {
-  //position: relative;
-  //float: right;
-  //margin-right: 0px;
-  //padding: 9px 10px;
-  //margin-top: 27px;
-  //margin-bottom: 27px;
-  background-color: @brand-primary;
-  //background-image: none;
-  //border: 1px solid transparent;
-  //border-radius: 0px;
-
-}
-
-#menu-nav {
-  &:hover {
-    background-color: @bp-lightgreen;
-  }
-}
-
-.dropdown--icon {
-  > a {
-    //display: inline-block;
-    position: relative;
-    //float: left;
-    //padding: 0 20px;
-
-
-    // Add separators after links
-    &:after {
-      content: "";
-      background: #ccc;
-      position: absolute;
-      bottom: 45%;
-      left: 0;
-      height: 15%;
-      width: 1px;
-    }
-  }
-}
-
-
-// Remove separators after links on Tablet
-@media screen and (max-width: @screen-tablet) {
-  .dropdown--icon {
-    > a {
-      &:after {
-        display: none;
-      }
-    }
-
-  }
-}
-
-@import "1-tools/bp-fonts";
-h1 {
-  color: red;
-  font-family: "Univers Next Pro";
-}

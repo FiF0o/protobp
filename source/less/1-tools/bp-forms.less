@@ -5,3 +5,35 @@ label {
   // override bootstrap default style by adding additional property
   color: @brand-primary;
 }
+
+label {
+  // adds custom markup to have styling for label and info text below
+  > span {
+    font-weight: normal;
+    color: @bp-darkgrey;
+  }
+}
+
+// ************************************** //
+// **************** FORM **************** //
+// ************************************** //
+//TODO Move custom classes into separate modules
+/* .form-group from bootstrap
+  class is not used in bootstrap but added to the bootstrap .form-group class to add extra styling not available within bootstrap
+  custom class: align blocks inline
+*/
+.form-inline {
+  display: inline;
+  //width: 75%;
+  > .form-control {
+    width: 65%;
+    min-width: 30%;
+    max-width: 70%;
+  }
+}
+
+
+//TODO - Custom class to be replaced with a bootstrap .btn .btn-default ?
+.upload-button {
+  margin-top: 20px;
+}
