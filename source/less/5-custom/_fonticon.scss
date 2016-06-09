@@ -41,23 +41,101 @@
 @function icon-char($filename) {
   $char: "";
 
-  @if $filename == UniversLTPro-45Light.otf {
+  @if $filename == BP Assets-01 {
   $char: "\E001";
 }
-  @if $filename == UniversNextPro-Bold.otf {
+  @if $filename == BP Assets-02 {
   $char: "\E002";
 }
-  @if $filename == UniversNextPro-Light.otf {
+  @if $filename == BP Assets-03 {
   $char: "\E003";
 }
-  @if $filename == UniversNextPro-Regular.otf {
+  @if $filename == BP Assets-04 {
   $char: "\E004";
 }
-  @if $filename == ic_g_translate_black_24px {
+  @if $filename == BP Assets-05 {
   $char: "\E005";
 }
-  @if $filename == twitter {
+  @if $filename == BP Assets-06 {
   $char: "\E006";
+}
+  @if $filename == BP Assets-07 {
+  $char: "\E007";
+}
+  @if $filename == BP Assets-08 {
+  $char: "\E008";
+}
+  @if $filename == BP Assets-09 {
+  $char: "\E009";
+}
+  @if $filename == BP Assets-10 {
+  $char: "\E00A";
+}
+  @if $filename == BP Assets-11 {
+  $char: "\E00B";
+}
+  @if $filename == BP Assets-12 {
+  $char: "\E00C";
+}
+  @if $filename == BP Assets-13 {
+  $char: "\E00D";
+}
+  @if $filename == BP Assets-14 {
+  $char: "\E00E";
+}
+  @if $filename == BP Assets-15 {
+  $char: "\E00F";
+}
+  @if $filename == BP Assets-16 {
+  $char: "\E010";
+}
+  @if $filename == BP Assets-17 {
+  $char: "\E011";
+}
+  @if $filename == BP Assets-18 {
+  $char: "\E012";
+}
+  @if $filename == BP Assets-19 {
+  $char: "\E013";
+}
+  @if $filename == BP Assets-20 {
+  $char: "\E014";
+}
+  @if $filename == BP Assets-21 {
+  $char: "\E015";
+}
+  @if $filename == BP Assets-22 {
+  $char: "\E016";
+}
+  @if $filename == BP Assets-23 {
+  $char: "\E017";
+}
+  @if $filename == BP Assets-26 {
+  $char: "\E018";
+}
+  @if $filename == ic_g_translate_black_24px {
+  $char: "\E019";
+}
+  @if $filename == idea-submission {
+  $char: "\E01A";
+}
+  @if $filename == idea-submission1 {
+  $char: "\E01B";
+}
+  @if $filename == twitter {
+  $char: "\E01C";
+}
+  @if $filename == UniversLTPro-45Light.otf {
+  $char: "\E01D";
+}
+  @if $filename == UniversNextPro-Bold.otf {
+  $char: "\E01E";
+}
+  @if $filename == UniversNextPro-Light.otf {
+  $char: "\E01F";
+}
+  @if $filename == UniversNextPro-Regular.otf {
+  $char: "\E020";
 }
 
 @return $char;
@@ -74,6 +152,90 @@
 }
 }
 
+.icon-BP Assets-01 {
+  @include icon(BP Assets-01);
+}
+.icon-BP Assets-02 {
+  @include icon(BP Assets-02);
+}
+.icon-BP Assets-03 {
+  @include icon(BP Assets-03);
+}
+.icon-BP Assets-04 {
+  @include icon(BP Assets-04);
+}
+.icon-BP Assets-05 {
+  @include icon(BP Assets-05);
+}
+.icon-BP Assets-06 {
+  @include icon(BP Assets-06);
+}
+.icon-BP Assets-07 {
+  @include icon(BP Assets-07);
+}
+.icon-BP Assets-08 {
+  @include icon(BP Assets-08);
+}
+.icon-BP Assets-09 {
+  @include icon(BP Assets-09);
+}
+.icon-BP Assets-10 {
+  @include icon(BP Assets-10);
+}
+.icon-BP Assets-11 {
+  @include icon(BP Assets-11);
+}
+.icon-BP Assets-12 {
+  @include icon(BP Assets-12);
+}
+.icon-BP Assets-13 {
+  @include icon(BP Assets-13);
+}
+.icon-BP Assets-14 {
+  @include icon(BP Assets-14);
+}
+.icon-BP Assets-15 {
+  @include icon(BP Assets-15);
+}
+.icon-BP Assets-16 {
+  @include icon(BP Assets-16);
+}
+.icon-BP Assets-17 {
+  @include icon(BP Assets-17);
+}
+.icon-BP Assets-18 {
+  @include icon(BP Assets-18);
+}
+.icon-BP Assets-19 {
+  @include icon(BP Assets-19);
+}
+.icon-BP Assets-20 {
+  @include icon(BP Assets-20);
+}
+.icon-BP Assets-21 {
+  @include icon(BP Assets-21);
+}
+.icon-BP Assets-22 {
+  @include icon(BP Assets-22);
+}
+.icon-BP Assets-23 {
+  @include icon(BP Assets-23);
+}
+.icon-BP Assets-26 {
+  @include icon(BP Assets-26);
+}
+.icon-ic_g_translate_black_24px {
+  @include icon(ic_g_translate_black_24px);
+}
+.icon-idea-submission {
+  @include icon(idea-submission);
+}
+.icon-idea-submission1 {
+  @include icon(idea-submission1);
+}
+.icon-twitter {
+  @include icon(twitter);
+}
 .icon-UniversLTPro-45Light.otf {
   @include icon(UniversLTPro-45Light.otf);
 }
@@ -85,10 +247,4 @@
 }
 .icon-UniversNextPro-Regular.otf {
   @include icon(UniversNextPro-Regular.otf);
-}
-.icon-ic_g_translate_black_24px {
-  @include icon(ic_g_translate_black_24px);
-}
-.icon-twitter {
-  @include icon(twitter);
 }

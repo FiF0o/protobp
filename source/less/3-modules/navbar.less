@@ -284,3 +284,53 @@ ul.nav .navbar-nav .navbar-right{padding-top:20px;}
 
   }
 }
+
+
+.navbar {
+  > .container-fluid {
+    padding: 0px;
+  }
+  .navbar-nav {
+    //override nav to be center align
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+    &.navbar-nav--full {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+
+      //override nav to be center align
+      > li {
+        display: inline-block;
+        float: none;
+          @media screen and (max-width: @screen-tablet) {
+            padding: 0px;
+            display: block;
+            width: 100%;
+          }
+        > a {
+          //fix overflow when content is added with pseudo class - link dividers
+          margin-left: -4px;
+        }
+      }
+    }
+  //@media screen and (min-width: @screen-tablet) {
+  //  display: block;
+  //  width: 100%;
+  //  }
+
+    //&.navbar-right {
+    //  // center navbar-right in the navbar
+    //  float: none !important;
+    //  //float: none;
+    //  margin-right: 0px;
+    //}
+  }
+  .navbar-collapse {
+    text-align: center;
+  }
+}
+
+
+
