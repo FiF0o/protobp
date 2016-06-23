@@ -126,14 +126,6 @@ var devBuild = (( config.environment || process.env.NODE_ENV || 'development').t
 
 log(pkg.name + ' ' + pkg.version + ' ' + config.environment + ' build');
 
-log('views.in:\n'+views.in+'\n\n')
-log('views.out:\n'+views.out+'\n\n')
-log('views.watch:\n'+views.watch+'\n\n')
-
-log('styles.in:\n'+styles.in+'\n\n')
-log('styles.out:\n'+styles.out+'\n\n')
-log('styles.watch:\n'+styles.watch+'\n\n')
-
 //TODO launch live reload on css not less
 gulp.task('less', function () {
     gulp.src('source/less/**/*.less')
