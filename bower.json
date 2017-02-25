@@ -1,21 +1,21 @@
 {
-  "name": "BPCatalyst",
-  "version": "1.0.0",
+  "name": "bpcatalyst",
+  "description": "Simple structure for a simple start to a simple site.",
+  "main": "build/index.html",
   "authors": [
     "Jon Laz"
   ],
-  "description": "prototype for BP portal",
-  "main": "build/index.html",
+  "license": "ISC",
   "keywords": [
     "boilerplate",
-    "gulp",
+    "seed",
+    "starter-kit",
+    "devtips",
     "sass",
-    "compass",
-    "babel",
-    "browserify",
-    "jade"
+    "jade",
+    "gulp"
   ],
-  "license": "MIT",
+  "homepage": "https://github.com/FiF0o/protobp",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -25,12 +25,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.4",
-    "bootstrap": "^3.3.6"
-  },
-  "homepage": "",
-  "moduleType": [],
-  "devDependencies": {
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.7.0"
   }
 }

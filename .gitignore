@@ -80,10 +80,7 @@ homepage_sample
 # Cache #
 .sass-cache/
 node_modules/
-build/
 source/vendors/
-.config.rb
-
 # Vendors #
 ###########
 source/vendors/

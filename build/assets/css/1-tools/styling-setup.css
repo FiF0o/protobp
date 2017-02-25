@@ -1,0 +1,9 @@
+html {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIjEtdG9vbHMvc3R5bGluZy1zZXR1cC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usc0JBQUE7O0FBS0EsQ0FBQztBQUFTLENBQUM7RUFDVCxtQkFBQSIsInNvdXJjZXNDb250ZW50IjpbImh0bWx7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG5cblxuKiB7XG4gICY6YmVmb3JlLCAmOmFmdGVyIHtcbiAgICBib3gtc2l6aW5nOiBpbmhlcml0O1xuICB9XG5cbn1cbiJdLCJmaWxlIjoiMS10b29scy9zdHlsaW5nLXNldHVwLmNzcyJ9 */
