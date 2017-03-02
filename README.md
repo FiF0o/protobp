@@ -3,7 +3,8 @@
 Use this as a simple structure for a simple start to a simple site using bootstrap sass.
 deployed at [http://abstracted-hot.surge.sh/](http://abstracted-hot.surge.sh/).</br>
 After the npm & bower dependencies have been installed (see section [##Install](##Install)),</br>
-run `gulp build` to generate the static assets.
+run `gulp build` to generate the static assets.</br>
+run `gulp watch` for development mode, assets are served on port `:3001`.</br>
 
 
 
