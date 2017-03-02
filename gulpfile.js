@@ -311,7 +311,7 @@ gulp.task('rename:css', function () {
 gulp.task('clean', function () {
     log('-> Cleaning build folder');
     del([
-        dest + '*'
+        dest + '**/*'
     ]);
 });
 
@@ -447,7 +447,6 @@ gulp.task('build', [
     'iconfont',
     'favicon',
     'build:images',
-    'watch'
 ]);
 gulp.task('allless', function() {
     gulp.src('source/less/**/*.less')

@@ -1,7 +1,9 @@
 # Boilerplate Gulp Version
 
-Use this as a simple structure for a simple start to a simple site.
-deployed at [http://abstracted-hot.surge.sh/](http://abstracted-hot.surge.sh/)
+Use this as a simple structure for a simple start to a simple site using bootstrap sass.
+deployed at [http://abstracted-hot.surge.sh/](http://abstracted-hot.surge.sh/).</br>
+After the npm & bower dependencies have been installed (see section [##Install](##Install)),</br>
+run `gulp build` to generate the static assets.
 
 
 
@@ -39,6 +41,8 @@ node install -g gulp bower
 
 
 ## Install
+
+You must have `gulp` and `bower` installed to manage dependencies
 
 After you have it on you pc, you need to go in the console to the project folder and execute the following command to gather all the dependencies.
 ```
@@ -117,4 +121,10 @@ This project have some nice configuration options to meet all you needs. To conf
 
 
 ## Improvements
-$ gem install sass-globbing and require it in the config.rb
+- $ `gem install sass-globbing` and require it in the `config.rb`
+- Unit tests
+- npm scripts to build and deploy assets
+- switch to babel
+
+## Others
+run `npm rebuild` if dependencies are not up to date.
